@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.os.Build;
 
 /**
- * Ng 7.20
+ * caoyu is very niubi
  */
 
 public class MainActivity extends Activity {

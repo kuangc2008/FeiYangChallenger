@@ -1,7 +1,7 @@
 package com.qihoo.feiyang.challenger;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+
+import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +19,7 @@ public class MainActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_main);
 
 		if (savedInstanceState == null) {
-			getSupportFragmentManager().beginTransaction()
-					.add(R.id.container, new PlaceholderFragment()).commit();
+
 		}
 	}
 
@@ -38,9 +37,7 @@ public class MainActivity extends ActionBarActivity {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
+
 		return super.onOptionsItemSelected(item);
 	}
 

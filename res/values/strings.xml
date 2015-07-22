@@ -4,5 +4,10 @@
     <string name="app_name">FeiYangChallenger</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    
+    <string name="current_test">今日内测</string>
+    <string name="coming_test">即将内测</string>
+
+    <string name="reserve_area">保留区域</string>
 
 </resources>

@@ -2,6 +2,8 @@ package com.qihoo.feiyang.challenger;
 
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+
+import com.qihoo.feiyang.ui.HoujhFragment;
 
 /**
  * caoyu is very niubi
@@ -22,6 +26,10 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Context context = getApplicationContext();
+        Intent intent = new Intent();
+        intent.setClass(context, HoujhFragment.class);
+        this.startActivity(intent);
 
     }
 

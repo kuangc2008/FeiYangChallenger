@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/simple_introduce_scrollView"
+        android:layout_gravity="center_horizontal" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提醒1"
+                android:id="@+id/simple_introduce_remind1"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:paddingBottom="8dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="5dp"
+                android:singleLine="true"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提醒2"
+                android:id="@+id/simple_introduce_remind2"
+                android:layout_alignTop="@+id/simple_introduce_remind1"
+                android:layout_toRightOf="@+id/simple_introduce_remind1"
+                android:layout_marginLeft="12dp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="5dp"
+                android:singleLine="true"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提醒3"
+                android:id="@+id/simple_introduce_remind3"
+                android:layout_alignTop="@+id/simple_introduce_remind2"
+                android:layout_toRightOf="@+id/simple_introduce_remind2"
+                android:layout_marginLeft="12dp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="5dp"
+                android:singleLine="true"
+                android:textSize="24sp"/>
+
+            <!--提醒功能组的“收起”箭头-->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/simple_introduce_remain_expend_imageView"
+                android:layout_alignTop="@+id/simple_introduce_remind3"
+                android:layout_toLeftOf="@+id/simple_introduce_remain_expend"
+                android:layout_marginRight="5dp"
+                android:layout_centerVertical="true"
+                android:paddingBottom="5dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="10dp"
+                android:src="@drawable/arrow_up"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收起"
+                android:id="@+id/simple_introduce_remain_expend"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:paddingBottom="8dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp"
+                android:singleLine="true"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提醒1详情"
+                android:id="@+id/simple_introduce_remind1_details"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_below="@+id/simple_introduce_remind1"
+                android:paddingBottom="5dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="5dp"
+                android:singleLine="true"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提醒2详情"
+                android:id="@+id/simple_introduce_remind2_details"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_below="@+id/simple_introduce_remind1_details"
+                android:paddingBottom="5dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="5dp"
+                android:singleLine="true"
+                android:textSize="20sp"/>/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提醒3详情"
+                android:id="@+id/simple_introduce_remind3_details"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_below="@+id/simple_introduce_remind2_details"
+                android:paddingBottom="5dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="5dp"
+                android:singleLine="true"
+                android:textSize="20sp"/>
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:text="举报"
+                android:id="@+id/simple_introduce_complain_button"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:layout_below="@+id/simple_introduce_remind2_details"
+                android:layout_alignTop="@+id/simple_introduce_remind3_details"
+                android:layout_marginRight="8dp"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:singleLine="true"
+                android:textSize="15sp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_introduce_complain_buttonstyle"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="应用描述："
+                android:id="@+id/simple_introduce_app_introduce"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/simple_introduce_remind3_details"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:paddingBottom="8dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="5dp"
+                android:singleLine="true"
+                android:textSize="24sp"/>
+
+            <!--“收起”箭头-->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/simple_introduce_app_introduce_expend_imageView"
+                android:layout_alignTop="@+id/simple_introduce_app_introduce"
+                android:layout_toLeftOf="@+id/simple_introduce_app_introduce_expend"
+                android:layout_marginRight="5dp"
+                android:layout_centerVertical="true"
+                android:paddingBottom="5dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="10dp"
+                android:src="@drawable/arrow_up"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收起"
+                android:id="@+id/simple_introduce_app_introduce_expend"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/simple_introduce_app_introduce"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:paddingBottom="8dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp"
+                android:singleLine="true"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="应用描述详情"
+                android:id="@+id/simple_introduce_app_introduce_details"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/simple_introduce_app_introduce"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingBottom="8dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="5dp"
+                android:singleLine="true"
+                android:textSize="15sp"/>
+
+            <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/simple_introduce_app_introduce_details"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="礼包活动"
+                    android:id="@+id/simple_introduce_gift"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="5dp"
+                    android:singleLine="true"
+                    android:textSize="20sp"/>
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/simple_introduce_gift_imageView"
+                    android:layout_below="@+id/simple_introduce_gift"
+                    android:src="@drawable/ic_launcher"
+                    android:layout_alignParentLeft ="true"
+                    android:scaleType="fitCenter"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/simple_introduce_gift_name"
+                    android:text="乱斗西游礼包"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/simple_introduce_gift_imageView"
+                    android:layout_alignTop="@+id/simple_introduce_gift_imageView"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="10dp"
+                    android:singleLine="true"
+                    android:textSize="24sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/simple_introduce_gift_contain"
+                    android:text="包含1,2,3,4"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/simple_introduce_gift_imageView"
+                    android:layout_alignBottom="@+id/simple_introduce_gift_imageView"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="5dp"
+                    android:textSize="15sp"/>
+
+                <!--礼包活动“>”箭头-->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:id="@+id/simple_introduce_gift_arrow_imageView"
+                    android:scaleType="centerInside"
+                    android:layout_alignTop="@+id/simple_introduce_gift_imageView"
+                    android:layout_toRightOf="@+id/simple_introduce_gift_name"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_centerVertical="true"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="8dp"
+                    android:src="@drawable/blue_arrows_riht"/>
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

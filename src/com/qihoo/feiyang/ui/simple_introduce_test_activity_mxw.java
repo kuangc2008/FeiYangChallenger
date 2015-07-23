@@ -8,6 +8,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
@@ -19,6 +20,7 @@ import com.qihoo.feiyang.challenger.R;
  */
 public class simple_introduce_test_activity_mxw extends Activity
 {
+    private boolean is_favorite_button_pressed = false;
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -111,7 +113,6 @@ public class simple_introduce_test_activity_mxw extends Activity
             public void onClick(View arg0)
             {
                 // TODO Auto-generated method stub
-                //应用介绍详情布局句柄
                 Log.v("debug", "comlain_button");
                 showString("点击了举报按钮");
             }
@@ -128,7 +129,6 @@ public class simple_introduce_test_activity_mxw extends Activity
             public void onClick(View arg0)
             {
                 // TODO Auto-generated method stub
-                //应用介绍详情布局句柄
                 Log.v("debug", "other_like_more");
                 showString("查看更多按钮");
             }
@@ -145,7 +145,6 @@ public class simple_introduce_test_activity_mxw extends Activity
             public void onClick(View arg0)
             {
                 // TODO Auto-generated method stub
-                //应用介绍详情布局句柄
                 Log.v("debug", "game1_download");
                 showString("游戏1下载按钮");
             }
@@ -163,7 +162,6 @@ public class simple_introduce_test_activity_mxw extends Activity
             public void onClick(View arg0)
             {
                 // TODO Auto-generated method stub
-                //应用介绍详情布局句柄
                 Log.v("debug", "game2_download");
                 showString("游戏2下载按钮");
             }
@@ -181,7 +179,6 @@ public class simple_introduce_test_activity_mxw extends Activity
             public void onClick(View arg0)
             {
                 // TODO Auto-generated method stub
-                //应用介绍详情布局句柄
                 Log.v("debug", "game3_download");
                 showString("游戏3下载按钮");
             }
@@ -199,13 +196,126 @@ public class simple_introduce_test_activity_mxw extends Activity
             public void onClick(View arg0)
             {
                 // TODO Auto-generated method stub
-                //应用介绍详情布局句柄
                 Log.v("debug", "gift_layout");
                 showString("点击了游戏礼包布局");
             }
         });
         /*----------------------------------------------------------------------------*/
 
+
+        /*游戏标签按钮1点击控制---------------------------------------------------------------*/
+        //游戏标签第一个按钮--动作
+        Button app_tag1_button = (Button)findViewById(R.id.simple_introduce_app_tag1_button);
+        //textView单击响应
+        app_tag1_button.setOnClickListener(new OnClickListener()
+        {
+            @Override
+            public void onClick(View arg0)
+            {
+                // TODO Auto-generated method stub
+                Log.v("debug", "app_tag1_button");
+                showString("点击了游戏标签第一个按钮-动作");
+            }
+        });
+        /*----------------------------------------------------------------------------*/
+
+
+        /*游戏标签按钮2点击控制---------------------------------------------------------------*/
+        //游戏标签第二个按钮--动作
+        Button app_tag2_button = (Button)findViewById(R.id.simple_introduce_app_tag2_button);
+        //textView单击响应
+        app_tag2_button.setOnClickListener(new OnClickListener()
+        {
+            @Override
+            public void onClick(View arg0)
+            {
+                // TODO Auto-generated method stub
+                Log.v("debug", "app_tag1_button");
+                showString("点击了游戏标签第二个按钮-平台游戏");
+            }
+        });
+        /*----------------------------------------------------------------------------*/
+
+        /*“查看更多版本”点击控制---------------------------------------------------------------*/
+        //查看更多版本textV
+        TextView vision_more = (TextView)findViewById(R.id.simple_introduce_version_more);
+        //textView单击响应
+        vision_more.setOnClickListener(new OnClickListener()
+        {
+            @Override
+            public void onClick(View arg0)
+            {
+                // TODO Auto-generated method stub
+                Log.v("debug", "vision_more");
+                showString("点击了查看更多版本按钮");
+            }
+        });
+        /*----------------------------------------------------------------------------*/
+
+
+
+        /*底部栏分享按钮点击控制---------------------------------------------------------------*/
+        //分享按钮
+        ImageButton share_button = (ImageButton)findViewById(R.id.simple_introduce_share_button);
+        //textView单击响应
+        share_button.setOnClickListener(new OnClickListener()
+        {
+            @Override
+            public void onClick(View arg0)
+            {
+                // TODO Auto-generated method stub
+                Log.v("debug", "share_button");
+                showString("点击了底部栏分享按钮");
+            }
+        });
+        /*----------------------------------------------------------------------------*/
+
+
+        /*底部栏下载按钮点击控制---------------------------------------------------------------*/
+        //下载按钮
+        Button download_button = (Button)findViewById(R.id.simple_introduce_download_button);
+        //textView单击响应
+        download_button.setOnClickListener(new OnClickListener()
+        {
+            @Override
+            public void onClick(View arg0)
+            {
+                // TODO Auto-generated method stub
+                Log.v("debug", "download_button");
+                showString("点击了底部栏下载按钮");
+            }
+        });
+        /*----------------------------------------------------------------------------*/
+
+
+
+        /*底部栏收藏按钮点击控制---------------------------------------------------------------*/
+        //收藏按钮
+        ImageButton favorite_button = (ImageButton)findViewById(R.id.simple_introduce_favorite_button);
+        //textView单击响应
+        favorite_button.setOnClickListener(new OnClickListener()
+        {
+            @Override
+            public void onClick(View arg0)
+            {
+                // TODO Auto-generated method stub
+                //已经被收藏
+                if(is_favorite_button_pressed)
+                {
+                    favorite_button.setImageResource(R.drawable.star_off);
+                    is_favorite_button_pressed = false;
+                }
+                //还未收藏
+                else
+                {
+                    favorite_button.setImageResource(R.drawable.star_on);
+                    is_favorite_button_pressed = true;
+                }
+                Log.v("debug", "favorite_button");
+                showString("点击了底部栏收藏按钮");
+            }
+        });
+        /*----------------------------------------------------------------------------*/
 
 
     }

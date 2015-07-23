@@ -12,6 +12,7 @@ import java.util.List;
  */
 public class HoujhFragmentAdapter extends FragmentPagerAdapter {
     private List<Fragment> fragmentList = new ArrayList<Fragment>();
+
     public HoujhFragmentAdapter(FragmentManager fm, List<Fragment> fragmentList) {
         super(fm);
         this.fragmentList = fragmentList;

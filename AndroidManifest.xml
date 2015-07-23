@@ -21,7 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.qihoo.feiyang.ui.HoujhFragment"/>
+        <activity
+            android:name="com.qihoo.feiyang.ui.HoujhFragment"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
 
         <activity
             android:name="com.qihoo.feiyang.ui.simple_introduce_test_activity_mxw"

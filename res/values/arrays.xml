@@ -1,0 +1,11 @@
+<resources>
+    <string-array name="game_names">
+        <item>乱斗西游</item>
+        <item>全民漂移</item>
+        <item>开心消消乐</item>
+        <item>三国杀</item>
+        <item>穿越火线</item>
+        <item>神庙逃亡2</item>
+        <item>煎饼侠</item>
+    </string-array>
+</resources>

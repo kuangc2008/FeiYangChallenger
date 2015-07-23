@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="80dp"
+    android:background="@drawable/contact_listitem"
+    android:descendantFocusability="blocksDescendants"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/iv_today_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="3dp"
+        android:background="@drawable/ico_game1"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_today_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_today_name"
+        android:layout_below="@+id/tv_today_name"
+        android:layout_marginLeft="12dp"
+        android:singleLine="true"
+        android:text="6000次下载"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_today_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_today_num"
+        android:layout_below="@+id/tv_today_num"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="2dp"
+        android:singleLine="true"
+        android:text="简介"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btn_today_beta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:focusable="false"
+        android:text="下载"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_today_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/btn_today_beta"
+        android:text="23.45M"
+        android:textSize="23sp" />
+
+    <TextView
+        android:id="@+id/tv_today_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/iv_today_game"
+        android:gravity="center_vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:singleLine="true"
+        android:text="乱斗西游"
+        android:textSize="24sp" />
+
+</RelativeLayout>

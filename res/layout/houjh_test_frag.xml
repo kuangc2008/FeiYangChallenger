@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
 
-    <ListView
-        android:id="@+id/listview_in_fragment"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:fastScrollEnabled="true"
-        android:focusable="true"
-        android:cacheColorHint="#ffffffff"/>
+    <com.example.widget.PullDownListView
+        android:id="@+id/sreach_list"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp" >
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:drawSelectorOnTop="false"
+            android:fadingEdgeLength="0.0sp" />
+    </com.example.widget.PullDownListView>
+
 </LinearLayout>

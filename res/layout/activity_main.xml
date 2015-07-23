@@ -1,8 +1,33 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.qihoo.feiyang.challenger.MainActivity"
-  />
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_carmera"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffffff"
+    android:orientation="vertical" >
 
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#C0D8FC" >
+
+        <Button
+            android:id="@+id/overflow_button"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="#042153"
+            android:text="登录" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="手游内测专区"
+            android:textColor="#0D0D0D"
+            android:textSize="25sp" />
+    </RelativeLayout>
+
+    <include layout="@layout/title_viewpaper" />
+
+</LinearLayout>

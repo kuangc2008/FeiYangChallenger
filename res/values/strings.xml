@@ -10,4 +10,9 @@
 
     <string name="reserve_area">保留区域</string>
 
+    <!--ma xiao wei test********************-->
+    <string name="expend">展开</string>
+    <string name="unexpend">收起</string>
+    <!--**************************************-->
+
 </resources>

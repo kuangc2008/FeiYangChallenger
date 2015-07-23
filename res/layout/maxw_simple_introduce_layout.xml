@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="@color/white">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -79,6 +79,7 @@
                 android:layout_height="wrap_content"
                 android:text="收起"
                 android:id="@+id/simple_introduce_remain_expend"
+                android:clickable="true"
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_vertical"
                 android:gravity="center_vertical"
@@ -89,77 +90,86 @@
                 android:textColor="#000000"
                 android:textSize="20sp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <!--提醒详情部分，设置GONE的时候可以收起-->
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="提醒1详情"
-                android:id="@+id/simple_introduce_remind1_details"
-                android:layout_alignParentLeft="true"
-                android:layout_gravity="center_vertical"
-                android:gravity="center_vertical"
-                android:layout_below="@+id/simple_introduce_remind1"
-                android:paddingBottom="5dp"
-                android:paddingLeft="8dp"
-                android:paddingTop="5dp"
-                android:singleLine="true"
-                android:textColor="#000000"
-                android:textSize="15sp"/>
+                android:id="@+id/simple_introduce_remind_details_RLayout"
+                android:layout_below="@+id/simple_introduce_remind1">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="提醒2详情"
-                android:id="@+id/simple_introduce_remind2_details"
-                android:layout_alignParentLeft="true"
-                android:layout_gravity="center_vertical"
-                android:gravity="center_vertical"
-                android:layout_below="@+id/simple_introduce_remind1_details"
-                android:paddingBottom="5dp"
-                android:paddingLeft="8dp"
-                android:paddingTop="5dp"
-                android:singleLine="true"
-                android:textColor="#000000"
-                android:textSize="15sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="提醒1详情"
+                    android:id="@+id/simple_introduce_remind1_details"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="5dp"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="15sp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="提醒3详情"
-                android:id="@+id/simple_introduce_remind3_details"
-                android:layout_alignParentLeft="true"
-                android:layout_gravity="center_vertical"
-                android:gravity="center_vertical"
-                android:layout_below="@+id/simple_introduce_remind2_details"
-                android:paddingBottom="5dp"
-                android:paddingLeft="8dp"
-                android:paddingTop="5dp"
-                android:singleLine="true"
-                android:textColor="#000000"
-                android:textSize="15sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="提醒2详情"
+                    android:id="@+id/simple_introduce_remind2_details"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_below="@+id/simple_introduce_remind1_details"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="5dp"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="15sp"/>
 
-            <Button
-                android:layout_width="60dp"
-                android:layout_height="30dp"
-                android:text="举报"
-                android:id="@+id/simple_introduce_complain_button"
-                android:layout_alignParentRight="true"
-                android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:layout_below="@+id/simple_introduce_remind2_details"
-                android:layout_alignTop="@+id/simple_introduce_remind3_details"
-                android:layout_marginRight="8dp"
-                android:paddingBottom="5dp"
-                android:paddingTop="5dp"
-                android:singleLine="true"
-                android:textSize="15sp"
-                android:textColor="#000000"
-                android:background="@drawable/simple_introduce_complain_buttonstyle"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="提醒3详情"
+                    android:id="@+id/simple_introduce_remind3_details"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_below="@+id/simple_introduce_remind2_details"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="5dp"
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="15sp"/>
+
+                <Button
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:text="举报"
+                    android:id="@+id/simple_introduce_complain_button"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:layout_below="@+id/simple_introduce_remind2_details"
+                    android:layout_alignTop="@+id/simple_introduce_remind3_details"
+                    android:layout_marginRight="8dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:singleLine="true"
+                    android:textSize="15sp"
+                    android:textColor="#000000"
+                    android:background="@drawable/simple_introduce_button_selector"/>
+            </RelativeLayout>
+
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1px"
                 android:background="#000000"
-                android:layout_below="@+id/simple_introduce_remind3_details"/>
+                android:layout_below="@+id/simple_introduce_remind_details_RLayout"
+                android:layout_marginTop="10dp"/>
             <!--***********************************************-->
 
             <!--应用描述******************************-->
@@ -169,7 +179,7 @@
                 android:text="应用描述："
                 android:id="@+id/simple_introduce_app_introduce"
                 android:layout_alignParentLeft="true"
-                android:layout_below="@+id/simple_introduce_remind3_details"
+                android:layout_below="@+id/simple_introduce_remind_details_RLayout"
                 android:layout_gravity="center_vertical"
                 android:layout_marginTop="20dp"
                 android:gravity="center_vertical"
@@ -199,6 +209,7 @@
                 android:layout_height="wrap_content"
                 android:text="收起"
                 android:id="@+id/simple_introduce_app_introduce_expend"
+                android:clickable="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignTop="@+id/simple_introduce_app_introduce"
                 android:layout_gravity="center_vertical"
@@ -231,16 +242,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="1px"
                 android:background="#000000"
+                android:id="@+id/simple_introduce_line_between_appIntroduce_and_gift"
                 android:layout_below="@+id/simple_introduce_app_introduce_details"/>
 
             <!--礼包活动******************************-->
             <RelativeLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/simple_introduce_gift_layout"
-                android:layout_below="@+id/simple_introduce_app_introduce_details"
-                android:layout_marginTop="5dp">
+                android:layout_below="@+id/simple_introduce_line_between_appIntroduce_and_gift"
+                android:clickable="true"
+                android:background="@drawable/simple_introduce_layout_selector">
 
                 <TextView
                     android:layout_width="100dp"
@@ -304,19 +316,17 @@
 
                 <!--礼包活动“>”箭头-->
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:id="@+id/simple_introduce_gift_arrow_imageView"
-                    android:scaleType="centerInside"
-                    android:layout_alignTop="@+id/simple_introduce_gift_imageView"
-                    android:layout_toRightOf="@+id/simple_introduce_gift_name"
+                    android:scaleType="fitCenter"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="5dp"
-                    android:layout_centerVertical="true"
+                    android:layout_marginRight="25dp"
+                    android:layout_centerInParent="true"
                     android:paddingBottom="5dp"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
-                    android:src="@drawable/blue_arrows_riht"/>
+                    android:src="@drawable/right_arrow"/>
             </RelativeLayout>
 
             <View
@@ -362,6 +372,7 @@
                     android:id="@+id/simple_introduce_other_like_more"
                     android:text="查看更多>"
                     android:layout_alignParentRight="true"
+                    android:clickable="true"
                     android:gravity="center_vertical"
                     android:paddingBottom="8dp"
                     android:paddingLeft="8dp"
@@ -525,37 +536,40 @@
                     android:layout_marginBottom="5dp">
 
                     <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
                         android:layout_weight="1"
                         android:id="@+id/simple_introduce_other_like_game1_button"
-                        android:background="@drawable/simple_introduce_complain_buttonstyle"
+                        android:background="@drawable/simple_introduce_button_selector"
                         android:text="下载"
                         android:textColor="#000000"
                         android:layout_marginRight="25dp"
-                        android:layout_marginLeft="25dp"/>
+                        android:layout_marginLeft="25dp"
+                        android:textSize="15sp"/>
 
                     <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
                         android:layout_weight="1"
                         android:id="@+id/simple_introduce_other_like_game2_button"
-                        android:background="@drawable/simple_introduce_complain_buttonstyle"
+                        android:background="@drawable/simple_introduce_button_selector"
                         android:text="下载"
                         android:textColor="#000000"
                         android:layout_marginRight="25dp"
-                        android:layout_marginLeft="25dp"/>
+                        android:layout_marginLeft="25dp"
+                        android:textSize="15sp"/>
 
                     <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
                         android:layout_weight="1"
                         android:id="@+id/simple_introduce_other_like_game3_button"
-                        android:background="@drawable/simple_introduce_complain_buttonstyle"
+                        android:background="@drawable/simple_introduce_button_selector"
                         android:text="下载"
                         android:textColor="#000000"
                         android:layout_marginRight="25dp"
-                        android:layout_marginLeft="25dp"/>
+                        android:layout_marginLeft="25dp"
+                        android:textSize="15sp"/>
                 </LinearLayout>
             </RelativeLayout>
 
@@ -574,4 +588,41 @@
             <!--***********************************************-->
         </RelativeLayout>
     </ScrollView>
-</LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:background="@color/white">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/share_normal"
+            android:background="@color/white"
+            android:scaleType="fitCenter"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="下载"
+            android:textSize="24dp"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/star_off"
+            android:background="@color/white"
+            android:scaleType="fitCenter"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

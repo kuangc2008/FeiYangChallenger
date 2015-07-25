@@ -13,30 +13,22 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name="com.qihoo.feiyang.challenger.MainActivity"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name="com.qihoo.feiyang.ui.HoujhFragment"
-            android:theme="@android:style/Theme.Light.NoTitleBar" />
-
-        <activity
-            android:name="com.qihoo.feiyang.ui.simple_introduce_test_activity_mxw"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
             android:label="@string/app_name" >
-            <!--测试切换接口
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            -->
         </activity>
 
+        <!--<activity-->
+            <!--android:name="com.qihoo.feiyang.ui.HoujhFragment"-->
+            <!--android:theme="@android:style/Theme.Light.NoTitleBar" />-->
+            <activity android:name=".LoginActivity"/>
+        <activity android:name=".GameActivity" />
+        <activity android:name=".SignupActivity" />
     </application>
 
 </manifest>

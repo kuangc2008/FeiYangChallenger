@@ -13,7 +13,7 @@
         android:background="#C0D8FC" >
 
         <Button
-            android:id="@+id/overflow_button"
+            android:id="@+id/overflow_btn"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:background="#042153"

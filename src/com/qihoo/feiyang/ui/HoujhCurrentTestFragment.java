@@ -1,26 +1,31 @@
 package com.qihoo.feiyang.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.AdapterView.OnItemClickListener;
 
 import com.example.widget.PullDownListView;
 import com.qihoo.feiyang.adapter.TodayBetaAdapter;
+import com.qihoo.feiyang.challenger.GameActivity;
 import com.qihoo.feiyang.challenger.R;
 import com.qihoo.feiyang.entity.GameBetaInfo;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  * Created by houjianhua on 2015/7/21.
  */
 public class HoujhCurrentTestFragment extends Fragment implements
-        PullDownListView.OnRefreshListioner, View.OnClickListener {
+        PullDownListView.OnRefreshListioner {
     private PullDownListView mPullDownView;
     private ListView mListView;
     private TodayBetaAdapter todayAdapter;
@@ -30,6 +35,8 @@ public class HoujhCurrentTestFragment extends Fragment implements
     private String[] gNameStrs;
     private int maxAount = 20;// 设置了最大数据值
     private Handler mHandler = new Handler();
+
+    private itemClickListener itemClickListener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,14 +57,13 @@ public class HoujhCurrentTestFragment extends Fragment implements
         mListView.setAdapter(todayAdapter);
         mPullDownView.setMore(true);// 这里设置true表示还有更多加载，设置为false底部将不显示更多
 
+        itemClickListener = new itemClickListener();
+        mListView.setOnItemClickListener(itemClickListener);
+
         return currTestView;
     }
 
-    @Override
-    public void onClick(View v) {
-        // TODO Auto-generated method stub
 
-    }
 
     /**
      * 刷新，先清空list中数据然后重新加载更新内容
@@ -147,6 +153,14 @@ public class HoujhCurrentTestFragment extends Fragment implements
 
         }
 
+    }
+    public class itemClickListener implements OnItemClickListener{
+
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Intent gameIntent=new Intent(getActivity(),GameActivity.class);
+            startActivity(gameIntent);
+        }
     }
 
 }

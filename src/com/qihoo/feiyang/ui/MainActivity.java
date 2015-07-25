@@ -1,15 +1,18 @@
 package com.qihoo.feiyang.ui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
+import com.qihoo.feiyang.challenger.LoginActivity;
 import com.qihoo.feiyang.challenger.R;
 
 import java.util.ArrayList;
@@ -22,13 +25,15 @@ import java.util.concurrent.TimeUnit;
  * caoyu is very niubi
  */
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity{
 
 	private ViewPager viewPager; // android-support-v4中的滑动组件
 	private List<ImageView> imageViews; // 滑动的图片集合
 	private String[] titles; // 图片标题
 	private int[] imageResId; // 图片ID
 	private List<View> dots; // 图片标题正文的那些点
+	public LoginOnClick LoginOnClick;//定义一个全局OnClick对象
+	private Button Login_btn;
 
 	private int currentItem = 0; // 当前图片的索引号
 	// An ExecutorService that can schedule commands to run after a given delay,
@@ -68,6 +73,12 @@ public class MainActivity extends Activity {
 		viewPager.setAdapter(new MyAdapter());// 设置填充ViewPager页面的适配器
 		// 设置一个监听器，当ViewPager中的页面改变时调用
 		viewPager.setOnPageChangeListener(new MyPageChangeListener());
+
+
+
+		LoginOnClick = new LoginOnClick();
+		Login_btn=(Button)this.findViewById(R.id.overflow_btn);
+		Login_btn.setOnClickListener(LoginOnClick);
 	}
 
 	@Override
@@ -178,6 +189,18 @@ public class MainActivity extends Activity {
 		@Override
 		public void finishUpdate(View arg0) {
 
+		}
+	}
+	public class LoginOnClick implements View.OnClickListener {
+		public void onClick(View view) {
+			switch (view.getId()) {
+				case R.id.overflow_btn:
+					Intent intentLogin = new Intent(MainActivity.this, LoginActivity.class);
+					startActivity(intentLogin);
+					break;
+				default:
+					break;
+			}
 		}
 	}
 }

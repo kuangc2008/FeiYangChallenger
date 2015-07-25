@@ -13,9 +13,10 @@
 
         <TextView
             android:id="@+id/curr_test_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:layout_gravity="center"
+            android:background="@android:color/darker_gray"
             android:text="@string/current_test"
             android:textSize="30sp" />
     </LinearLayout>
@@ -29,8 +30,8 @@
 
         <TextView
             android:id="@+id/comi_test_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:layout_gravity="center"
             android:text="@string/coming_test"
             android:textSize="30sp" />

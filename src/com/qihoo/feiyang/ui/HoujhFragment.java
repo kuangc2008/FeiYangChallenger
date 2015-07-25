@@ -1,5 +1,7 @@
 package com.qihoo.feiyang.ui;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
@@ -8,12 +10,14 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ImageView.ScaleType;
 import android.widget.Toast;
 
 import com.qihoo.feiyang.adapter.HoujhFragmentAdapter;
+import com.qihoo.feiyang.challenger.LoginActivity;
 import com.qihoo.feiyang.challenger.R;
 
 import java.util.ArrayList;
@@ -39,6 +43,8 @@ public class HoujhFragment extends FragmentActivity {
     private List<ImageView> imageViews; // 滑动的图片集合
     private int[] imageResId; // 图片ID
     private List<View> dots; // 图片标题正文的那些点
+    public LoginOnClick LoginOnClick;//定义一个全局OnClick对象
+    private Button Login_btn;
 
     private int currentItem = 0; // 当前图片的索引号
     // An ExecutorService that can schedule commands to run after a given delay,
@@ -80,6 +86,12 @@ public class HoujhFragment extends FragmentActivity {
         adViewPager.setOnPageChangeListener(new MyPageChangeListener());
         init();
         initState();
+
+
+        LoginOnClick = new LoginOnClick();
+        Login_btn=(Button)this.findViewById(R.id.overflow_button);
+
+        Login_btn.setOnClickListener(LoginOnClick);
     }
 
     @Override
@@ -157,7 +169,7 @@ public class HoujhFragment extends FragmentActivity {
         }
 
         @Override
-        public Object instantiateItem(View arg0, int position) {
+        public Object instantiateItem(View arg0, final int position) {
 
 
             ((ViewPager) arg0).addView(imageViews.get(position));
@@ -248,6 +260,16 @@ public class HoujhFragment extends FragmentActivity {
             if (i == 2) {
                 int pageNum = viewPager.getCurrentItem();
                 viewPager.setCurrentItem(pageNum);
+                switch (pageNum) {
+                    case 0:
+                        clean();
+                        curr_test.setBackgroundColor(Color.GRAY);
+                        break;
+                    case 1:
+                        clean();
+                        comi_test.setBackgroundColor(Color.GRAY);
+                        break;
+                }
             }
         }
     }
@@ -257,6 +279,7 @@ public class HoujhFragment extends FragmentActivity {
         @Override
         public void onClick(View v) {
 
+            clean();
             int viewId = v.getId();
             int viewItem = viewId2Item(viewId);
             if (viewItem == -1) {
@@ -272,14 +295,32 @@ public class HoujhFragment extends FragmentActivity {
         int viewItem;
         switch (viewId) {
             case R.id.curr_test_textview:
+                curr_test.setBackgroundColor(Color.GRAY);
                 viewItem = 0;
                 break;
             case R.id.comi_test_textview:
+                comi_test.setBackgroundColor(Color.GRAY);
                 viewItem = 1;
                 break;
             default:
                 viewItem = -1;
         }
         return viewItem;
+    }
+    public void clean(){
+        curr_test.setBackgroundColor(Color.TRANSPARENT);
+        comi_test.setBackgroundColor(Color.TRANSPARENT);
+    }
+    public class LoginOnClick implements View.OnClickListener {
+        public void onClick(View view) {
+            switch (view.getId()) {
+                case R.id.overflow_button:
+                    Intent intentLogin = new Intent(HoujhFragment.this, LoginActivity.class);
+                    startActivity(intentLogin);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

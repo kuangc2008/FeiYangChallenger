@@ -29,7 +29,7 @@ public class simple_introduce_test_activity_mxw extends Activity
 
         /*提醒详情的展开按钮控制---------------------------------------------*/
         //展开文字textView
-        TextView remain_expend_textView = (TextView)findViewById(R.id.simple_introduce_remain_expend);
+        final TextView remain_expend_textView = (TextView)findViewById(R.id.simple_introduce_remain_expend);
         //textView单击响应
         remain_expend_textView.setOnClickListener(new OnClickListener() {
             @Override
@@ -65,7 +65,7 @@ public class simple_introduce_test_activity_mxw extends Activity
 
         /*应用描述的展开按钮控制---------------------------------------------*/
         //展开文字textView
-        TextView app_introduce_expend_textView = (TextView)findViewById(R.id.simple_introduce_app_introduce_expend);
+        final TextView app_introduce_expend_textView = (TextView)findViewById(R.id.simple_introduce_app_introduce_expend);
         //textView单击响应
         app_introduce_expend_textView.setOnClickListener(new OnClickListener()
         {
@@ -291,7 +291,7 @@ public class simple_introduce_test_activity_mxw extends Activity
 
         /*底部栏收藏按钮点击控制---------------------------------------------------------------*/
         //收藏按钮
-        ImageButton favorite_button = (ImageButton)findViewById(R.id.simple_introduce_favorite_button);
+        final ImageButton favorite_button = (ImageButton)findViewById(R.id.simple_introduce_favorite_button);
         //textView单击响应
         favorite_button.setOnClickListener(new OnClickListener()
         {

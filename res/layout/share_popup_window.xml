@@ -30,14 +30,14 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:id="@+id/share_popup_QQ_imageView"
-            android:src="@drawable/QQ"/>
+            android:src="@drawable/qq"/>
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:id="@+id/share_popup_QQ_zone_imageView"
-            android:src="@drawable/QQ_zone"/>
+            android:src="@drawable/qq_zone"/>
     </TableRow>
 
     <TableRow
@@ -110,7 +110,7 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:id="@+id/share_popup_QR_code_imageView"
-            android:src="@drawable/QR_code"/>
+            android:src="@drawable/qr_code"/>
 
         <ImageView
             android:layout_width="0dp"

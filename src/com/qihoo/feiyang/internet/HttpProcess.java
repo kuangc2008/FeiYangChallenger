@@ -38,8 +38,8 @@ public class HttpProcess {
     }
 
     private class ConnectTask extends AsyncTask{
-        private String ip = "10.18.61.102";
-        private String port = "8888";
+        private String ip = "10.19.6.249";//10.18.61.102";
+        private String port = "8000";
         private String uri = "http://"+ip+":"+port+"/feiyang/login";
         private Toast toast;
         private Context context;
@@ -71,7 +71,7 @@ public class HttpProcess {
                 //String statusString = statusLine.getReasonPhrase();
                 statusCode = statusLine.getStatusCode();
                 if(statusCode != 200){
-                    return null;
+                    return statusCode;
                 }
                 //publishProgress(statusCode);
                 if (httpEntity != null) {
@@ -101,7 +101,8 @@ public class HttpProcess {
         @Override
         protected void onPostExecute(Object result) {
             super.onPostExecute(result);
-            if(result == 200){
+            int res2int = Integer.parseInt(String.valueOf(result));
+            if(res2int == 200){
                 toast.makeText(context, "Login success.", Toast.LENGTH_SHORT).show();
             }else{
                 toast.makeText(context, "Login fail.", Toast.LENGTH_SHORT).show();

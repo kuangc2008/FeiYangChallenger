@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingTop="20dp"
+    android:paddingBottom="15dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:gravity="center">
+
+    <TableRow>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:id="@+id/share_popup_weixin_friends_circle_imageView"
+            android:src="@drawable/weixin_friend_circle"
+            android:scaleType="fitCenter"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:id="@+id/share_popup_weixin_imageView"
+            android:src="@drawable/weixin"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:id="@+id/share_popup_QQ_imageView"
+            android:src="@drawable/QQ"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:id="@+id/share_popup_QQ_zone_imageView"
+            android:src="@drawable/QQ_zone"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="5dp">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:id="@+id/share_popup_weixin_friends_circle_textView"
+            android:layout_weight="1"
+            android:text="微信朋友圈"
+            android:textSize="11sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+
+            android:singleLine="true"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:id="@+id/share_popup_weixin_textView"
+            android:layout_weight="1"
+            android:text="微信好友"
+            android:textSize="11sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:singleLine="true"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:id="@+id/share_popup_QQ_textView"
+            android:layout_weight="1"
+            android:text="QQ好友"
+            android:textSize="11sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:singleLine="true"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:id="@+id/share_popup_QQ_zone_textView"
+            android:layout_weight="1"
+            android:text="QQ空间"
+            android:textSize="11sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:singleLine="true"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="20dp">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:id="@+id/share_popup_weibo_circle_imageView"
+            android:src="@drawable/weibo"
+            android:scaleType="fitCenter"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:id="@+id/share_popup_copy_links_imageView"
+            android:src="@drawable/copy_links"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:id="@+id/share_popup_QR_code_imageView"
+            android:src="@drawable/QR_code"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:id="@+id/share_popup_more_imageView"
+            android:src="@drawable/more"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="5dp">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:id="@+id/share_popup_weibo_textView"
+            android:layout_weight="1"
+            android:text="微博"
+            android:textSize="11sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:singleLine="true"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:id="@+id/share_popup_copy_links_textView"
+            android:layout_weight="1"
+            android:text="复制链接"
+            android:textSize="11sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:singleLine="true"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:id="@+id/share_popup_QR_code_textView"
+            android:layout_weight="1"
+            android:text="二维码"
+            android:textSize="11sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:singleLine="true"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:id="@+id/share_popup_more_textView"
+            android:layout_weight="1"
+            android:text="更多"
+            android:textSize="11sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:singleLine="true"/>
+    </TableRow>
+</TableLayout>

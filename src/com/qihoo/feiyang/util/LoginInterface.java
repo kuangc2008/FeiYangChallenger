@@ -54,7 +54,7 @@ public class LoginInterface {
     public boolean userRegist(String userName, String password)
     {
         //非法用户名
-        if (isValidName(userName))
+        if (!isValidName(userName))
         {
             m_errorCode = errorCode.invalidUserName;
             return false;
@@ -68,7 +68,7 @@ public class LoginInterface {
         }
 
         //用户名已存在，注册失败
-        String nameKey = userName + ' ' + " name";
+        String nameKey = userName + ' ' + "name";
         if (m_preferences.contains(nameKey))
         {
             m_errorCode = errorCode.userNameHasExisted;
@@ -89,7 +89,7 @@ public class LoginInterface {
     public boolean isRightPassword(String userName, String password)
     {
         //非法用户名
-        if (isValidName(userName))
+        if (!isValidName(userName))
         {
             m_errorCode = errorCode.invalidUserName;
             return false;
@@ -102,7 +102,7 @@ public class LoginInterface {
             return false;
         }
 
-        String nameKey = userName + ' ' + " name";
+        String nameKey = userName + ' ' + "name";
         String passwordKey = userName + ' ' + "password";
 
         //用户名不存在，密码错误
@@ -112,7 +112,7 @@ public class LoginInterface {
             return false;
         }
         //检测密码
-        if (password != m_preferences.getString(passwordKey, null))
+        if (!password.equals(m_preferences.getString(passwordKey, null)))
         {
             m_errorCode = errorCode.nomal;
             return false;
@@ -129,23 +129,50 @@ public class LoginInterface {
     //判断用户名是否合法
     private boolean isValidName(String name)
     {
-        if(name.indexOf(" ")!=-1)
+        if(name.indexOf(" ")!=-1){
             return false;
-        else
-            return true;
+        }
+        if (name.isEmpty()){
+            return false;
+        }
+
+        return true;
     }
 
     //判断密码是否合法
     private boolean isValidPassword(String password)
     {
-        if(password.indexOf(" ")!=-1)
+        if(password.indexOf(" ")!=-1){
             return false;
-        else
-            return true;
+        }
+
+        if (password.isEmpty()){
+            return false;
+        }
+
+        return true;
     }
 
-    public errorCode geterrorNum()
+    public errorCode getErrorNum()
     {
         return m_errorCode;
+    }
+
+    public String getErrorString()
+    {
+        switch (m_errorCode){
+            case nomal:
+                return "正常";
+            case invalidUserName:
+                return "非法用户名";
+            case invalidPassword:
+                return "非法密码";
+            case userNameHasExisted:
+                return "用户名已存在";
+            case userNameNotExist:
+                return "用户名不存在";
+        }
+
+        return m_errorCode.toString();
     }
 }

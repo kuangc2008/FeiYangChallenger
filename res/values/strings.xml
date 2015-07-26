@@ -72,4 +72,10 @@
     <string name="unexpend">收起</string>
     <!--**************************************-->
 
+    <!--注册界面错误提示字符串********************-->
+    <string name="user_name_has_existed">用户名已存在</string>
+    <string name="password_not_same">密码输入不一致</string>
+    <string name="signup_success">注册成功</string>
+    <!--**************************************-->
+
 </resources>

@@ -24,8 +24,8 @@ import com.qihoo.feiyang.challenger.R;
  * Created by niangang on 2015/7/24.
  */
 public class GameIntroFragment extends Fragment implements View.OnClickListener {
-    private TextView tvRemind, tvGiftGName;
-    private ImageView ivRemind, ivGift;
+    private TextView tvRemind, tvGiftGName,tv_app_introduce_expend,tv_introduce_details;
+    private ImageView ivRemind, ivGift,iv_app_introduce_expend;
     private ImageButton ibtnShare, ibtnEnjoy;
     private Button btnDownload;
     //收藏按钮状态
@@ -63,9 +63,15 @@ public class GameIntroFragment extends Fragment implements View.OnClickListener 
         //分享按钮
         ibtnShare = (ImageButton) gameIntroView.findViewById(R.id.simple_introduce_share_button);
 
+        tv_app_introduce_expend = (TextView) gameIntroView.findViewById(R.id.simple_introduce_app_introduce_expend);
+        iv_app_introduce_expend = (ImageView) gameIntroView.findViewById(R.id.simple_introduce_app_introduce_expend_imageView);
+
+        tv_introduce_details = (TextView) gameIntroView.findViewById(R.id.simple_introduce_app_introduce_details);
+
 
         popupWindow_view = inflater.inflate(R.layout.share_popup_window, container, false);
         popupWindow_tableLayout = (TableLayout)popupWindow_view.findViewById(R.id.share_popup_tablelayout);
+        
         //分享弹出窗口各个图标ImageView
         ImageView weixin_friends_circle_imageView = (ImageView)popupWindow_view.findViewById(R.id.share_popup_weixin_friends_circle_imageView);
         ImageView weixin_imageView = (ImageView)popupWindow_view.findViewById(R.id.share_popup_weixin_imageView);
@@ -97,6 +103,8 @@ public class GameIntroFragment extends Fragment implements View.OnClickListener 
         ibtnShare.setOnClickListener(this);
         ibtnEnjoy.setOnClickListener(this);
         popupWindow_tableLayout.setOnClickListener(this);
+        tv_app_introduce_expend.setOnClickListener(this);
+        iv_app_introduce_expend.setOnClickListener(this);
 
         weixin_friends_circle_imageView.setOnClickListener(this);
         weixin_imageView.setOnClickListener(this);
@@ -151,6 +159,19 @@ public class GameIntroFragment extends Fragment implements View.OnClickListener 
 
 
 
+                break;
+
+            case R.id.simple_introduce_app_introduce_expend:
+                if (tv_introduce_details.getVisibility() == View.VISIBLE) {
+                    tv_app_introduce_expend.setText("展开");
+                    iv_app_introduce_expend.setImageResource(R.drawable.arrow_downlad);
+                    tv_introduce_details.setVisibility(View.GONE);
+
+                } else {
+                    tv_app_introduce_expend.setText("收起");
+                    iv_app_introduce_expend.setImageResource(R.drawable.ic_arrow_up);
+                    tv_introduce_details.setVisibility(View.VISIBLE);
+                }
                 break;
 
             case R.id.simple_introduce_favorite_button:

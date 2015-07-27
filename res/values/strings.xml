@@ -73,4 +73,12 @@
 
     <string name="ng_share_more">分享成功！</string>
 
-</resources>
+    <!--LoginInterface字符串********************-->
+    <string name="login_interface_error_string_nomal">正常</string>
+    <string name="login_interface_error_string_invalidUserName">非法用户名</string>
+    <string name="login_interface_error_string_invalidPassword">非法密码</string>
+    <string name="login_interface_error_string_userNameHasExisted">用户名已存在</string>
+    <string name="login_interface_error_string_userNameNotExist">用户名不存在</string>
+    <string name="login_interface_error_string_invalidNickName">非法昵称</string>
+    <string name="login_interface_error_string_nickNameHasExisted">昵称已存在</string>
+    <!--**************************************--></resources>

@@ -1,8 +1,11 @@
 package com.qihoo.feiyang.internet;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
+
+import com.qihoo.feiyang.ui.HoujhFragment;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -39,7 +42,7 @@ public class HttpProcess {
 
     private class ConnectTask extends AsyncTask{
         private String ip = "10.19.6.249";//10.18.61.102";
-        private String port = "8000";
+        private String port = "8001";
         private String uri = "http://"+ip+":"+port+"/feiyang/login";
         private Toast toast;
         private Context context;
@@ -103,10 +106,17 @@ public class HttpProcess {
             super.onPostExecute(result);
             int res2int = Integer.parseInt(String.valueOf(result));
             if(res2int == 200){
+                Intent intent = new Intent();
+                intent.setClass(context, HoujhFragment.class);
+                context.startService(intent);
                 toast.makeText(context, "Login success.", Toast.LENGTH_SHORT).show();
             }else{
                 toast.makeText(context, "Login fail.", Toast.LENGTH_SHORT).show();
             }
+
+            /*if(comuniListener!=null){
+                comuniListener.loadComlpete();
+            }*/
         }
     }
 }

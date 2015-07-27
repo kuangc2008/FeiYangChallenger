@@ -10,11 +10,13 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ImageView.ScaleType;
 
 import com.qihoo.feiyang.adapter.HoujhFragmentAdapter;
+import com.qihoo.feiyang.challenger.LoginActivity;
 import com.qihoo.feiyang.challenger.R;
 
 import java.util.ArrayList;
@@ -40,6 +42,7 @@ public class HoujhFragment extends FragmentActivity {
     private List<ImageView> imageViews; // ????????????
     private int[] imageResId; // ??ID
     private List<View> dots; // ?????????????§»??
+    private Button loginButton;
 
     private int currentItem = 0; // ?????????????
     // An ExecutorService that can schedule commands to run after a given delay,
@@ -211,6 +214,7 @@ public class HoujhFragment extends FragmentActivity {
         comiTestFrag = new HoujhComingTestFragment();
         fragmentAdapter = new HoujhFragmentAdapter(getSupportFragmentManager(),
                 fragmentList);
+        loginButton = (Button) findViewById(R.id.login_button);
     }
 
     // initial the FragmentActivity
@@ -222,7 +226,7 @@ public class HoujhFragment extends FragmentActivity {
         viewPager.setOnPageChangeListener(new pageChangeListener());
         tvCurr.setOnClickListener(new IconClickListener());
         tvComing.setOnClickListener(new IconClickListener());
-
+        loginButton.setOnClickListener(new ButtonClickListener());
     }
 
     class pageChangeListener implements ViewPager.OnPageChangeListener {
@@ -253,6 +257,16 @@ public class HoujhFragment extends FragmentActivity {
                 int pageNum = viewPager.getCurrentItem();
                 viewPager.setCurrentItem(pageNum);
             }
+        }
+    }
+
+    class ButtonClickListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent();
+            intent.setClass(HoujhFragment.this, LoginActivity.class);
+            startActivity(intent);
         }
     }
 

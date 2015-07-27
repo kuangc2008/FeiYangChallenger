@@ -37,8 +37,8 @@ public class LoginActivity extends Activity{
 
                   editor.putString("username", username);
                   editor.commit();
-                  context = getApplicationContext();
-                  HttpProcess httpProcess = new HttpProcess(context, username, password);
+                  //context = getApplicationContext();
+                  HttpProcess httpProcess = new HttpProcess(LoginActivity.this, username, password);
                   httpProcess.send();
               }
 

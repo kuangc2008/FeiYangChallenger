@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
-import com.qihoo.feiyang.challenger.LoginActivity;
 import com.qihoo.feiyang.challenger.R;
 
 import java.util.ArrayList;
@@ -27,22 +26,22 @@ import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends Activity{
 
-	private ViewPager viewPager; // android-support-v4ÖÐµÄ»¬¶¯×é¼þ
-	private List<ImageView> imageViews; // »¬¶¯µÄÍ¼Æ¬¼¯ºÏ
-	private String[] titles; // Í¼Æ¬±êÌâ
+	private ViewPager viewPager; // android-support-v4ï¿½ÐµÄ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private List<ImageView> imageViews; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½
+	private String[] titles; // Í¼Æ¬ï¿½ï¿½ï¿½ï¿½
 	private int[] imageResId; // Í¼Æ¬ID
-	private List<View> dots; // Í¼Æ¬±êÌâÕýÎÄµÄÄÇÐ©µã
-	public LoginOnClick LoginOnClick;//¶¨ÒåÒ»¸öÈ«¾ÖOnClick¶ÔÏó
+	private List<View> dots; // Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½Ð©ï¿½ï¿½
+	public LoginOnClick LoginOnClick;//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½È«ï¿½ï¿½OnClickï¿½ï¿½ï¿½ï¿½
 	private Button Login_btn;
 
-	private int currentItem = 0; // µ±Ç°Í¼Æ¬µÄË÷ÒýºÅ
+	private int currentItem = 0; // ï¿½ï¿½Ç°Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	// An ExecutorService that can schedule commands to run after a given delay,
 	// or to execute periodically.
 	private ScheduledExecutorService scheduledExecutorService;
-	// ÇÐ»»µ±Ç°ÏÔÊ¾µÄÍ¼Æ¬
+	// ï¿½Ð»ï¿½ï¿½ï¿½Ç°ï¿½ï¿½Ê¾ï¿½ï¿½Í¼Æ¬
 	private Handler handler = new Handler() {
 		public void handleMessage(android.os.Message msg) {
-			viewPager.setCurrentItem(currentItem);// ÇÐ»»µ±Ç°ÏÔÊ¾µÄÍ¼Æ¬
+			viewPager.setCurrentItem(currentItem);// ï¿½Ð»ï¿½ï¿½ï¿½Ç°ï¿½ï¿½Ê¾ï¿½ï¿½Í¼Æ¬
 		}
 
 	};
@@ -55,7 +54,7 @@ public class MainActivity extends Activity{
 				R.drawable.title_paper2, R.drawable.title_paper3 };
 
 		imageViews = new ArrayList<ImageView>();
-		// ³õÊ¼»¯Í¼Æ¬×ÊÔ´
+		// ï¿½ï¿½Ê¼ï¿½ï¿½Í¼Æ¬ï¿½ï¿½Ô´
 		for (int i = 0; i < imageResId.length; i++) {
 			ImageView imageView = new ImageView(this);
 			imageView.setImageResource(imageResId[i]);
@@ -63,15 +62,15 @@ public class MainActivity extends Activity{
 			imageViews.add(imageView);
 		}
 
-		// µã
+		// ï¿½ï¿½
 		dots = new ArrayList<View>();
 		dots.add(findViewById(R.id.v_dot0));
 		dots.add(findViewById(R.id.v_dot1));
 		dots.add(findViewById(R.id.v_dot2));
 
 		viewPager = (ViewPager) findViewById(R.id.vp);
-		viewPager.setAdapter(new MyAdapter());// ÉèÖÃÌî³äViewPagerÒ³ÃæµÄÊÊÅäÆ÷
-		// ÉèÖÃÒ»¸ö¼àÌýÆ÷£¬µ±ViewPagerÖÐµÄÒ³Ãæ¸Ä±äÊ±µ÷ÓÃ
+		viewPager.setAdapter(new MyAdapter());// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ViewPagerÒ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ViewPagerï¿½Ðµï¿½Ò³ï¿½ï¿½Ä±ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 		viewPager.setOnPageChangeListener(new MyPageChangeListener());
 
 
@@ -84,7 +83,7 @@ public class MainActivity extends Activity{
 	@Override
 	protected void onStart() {
 		scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-		// µ±ActivityÏÔÊ¾³öÀ´ºó£¬Ã¿Á½ÃëÖÓÇÐ»»Ò»´ÎÍ¼Æ¬ÏÔÊ¾
+		// ï¿½ï¿½Activityï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½Ò»ï¿½ï¿½Í¼Æ¬ï¿½ï¿½Ê¾
 		scheduledExecutorService.scheduleAtFixedRate(new ScrollTask(), 1, 2,
 				TimeUnit.SECONDS);
 		super.onStart();
@@ -92,13 +91,13 @@ public class MainActivity extends Activity{
 
 	@Override
 	protected void onStop() {
-		// µ±Activity²»¿É¼ûµÄÊ±ºòÍ£Ö¹ÇÐ»»
+		// ï¿½ï¿½Activityï¿½ï¿½ï¿½É¼ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Í£Ö¹ï¿½Ð»ï¿½
 		scheduledExecutorService.shutdown();
 		super.onStop();
 	}
 
 	/**
-	 * »»ÐÐÇÐ»»ÈÎÎñ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½
 	 *
 	 * @author Administrator
 	 */
@@ -108,14 +107,14 @@ public class MainActivity extends Activity{
 			synchronized (viewPager) {
 				System.out.println("currentItem: " + currentItem);
 				currentItem = (currentItem + 1) % imageViews.size();
-				handler.obtainMessage().sendToTarget(); // Í¨¹ýHandlerÇÐ»»Í¼Æ¬
+				handler.obtainMessage().sendToTarget(); // Í¨ï¿½ï¿½Handlerï¿½Ð»ï¿½Í¼Æ¬
 			}
 		}
 
 	}
 
 	/**
-	 * µ±ViewPagerÖÐÒ³ÃæµÄ×´Ì¬·¢Éú¸Ä±äÊ±µ÷ÓÃ
+	 * ï¿½ï¿½ViewPagerï¿½ï¿½Ò³ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 	 *
 	 * @author Administrator
 	 */
@@ -144,7 +143,7 @@ public class MainActivity extends Activity{
 	}
 
 	/**
-	 * Ìî³äViewPagerÒ³ÃæµÄÊÊÅäÆ÷
+	 * ï¿½ï¿½ï¿½ViewPagerÒ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 *
 	 * @author Administrator
 	 */

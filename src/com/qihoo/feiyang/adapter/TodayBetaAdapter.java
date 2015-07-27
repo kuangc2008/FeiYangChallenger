@@ -1,23 +1,30 @@
 package com.qihoo.feiyang.adapter;
 
+
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.widget.ProgressWheel;
 import com.qihoo.feiyang.challenger.R;
 import com.qihoo.feiyang.entity.GameBetaInfo;
+import com.qihoo.feiyang.thread.ProgressWheelThread;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class TodayBetaAdapter extends BaseAdapter {
 
+public class TodayBetaAdapter extends BaseAdapter {
+    boolean wheelRunning;
+    int wheelProgress = 0;
+    ViewHolder finalViewHolder;
+    private List<View> listBtn;
     private List<GameBetaInfo> mGameBetaInfos = null;
     private Context mContext;
     private int[] imgIds = {R.drawable.ico_game1, R.drawable.ico_game2,
@@ -27,6 +34,7 @@ public class TodayBetaAdapter extends BaseAdapter {
     public TodayBetaAdapter(Context mContext, List<GameBetaInfo> gBetaInfos) {
         this.mContext = mContext;
         this.mGameBetaInfos = gBetaInfos;
+        listBtn = new ArrayList<View>();
 
     }
 
@@ -42,8 +50,11 @@ public class TodayBetaAdapter extends BaseAdapter {
         return position;
     }
 
-    public View getView(final int position, View view, ViewGroup arg2) {
-        ViewHolder viewHolder = null;
+
+    public View getView(int position, View view, ViewGroup arg2) {
+        final ViewHolder viewHolder;
+
+
         if (view == null) {
             viewHolder = new ViewHolder();
             view = LayoutInflater.from(mContext).inflate(
@@ -60,11 +71,16 @@ public class TodayBetaAdapter extends BaseAdapter {
 
             viewHolder.btnDownLoad = (Button) view
                     .findViewById(R.id.btn_today_beta);
+            viewHolder.progressWheel = (ProgressWheel) view.findViewById(R.id.progress_bar_two);
 
+            listBtn.add(view);
             view.setTag(viewHolder);
         } else {
+
             viewHolder = (ViewHolder) view.getTag();
         }
+
+
         viewHolder.tvName.setText(this.mGameBetaInfos.get(position)
                 .getgNameStr());
         viewHolder.tvSize.setText(this.mGameBetaInfos.get(position).getgSize());
@@ -75,33 +91,54 @@ public class TodayBetaAdapter extends BaseAdapter {
                 .getgInfoStr());
 
         viewHolder.ivGameIco.setImageResource(imgIds[this.mGameBetaInfos.get(
-                        position).getgIcoUri()]
-
-        );
+                position).getgIcoUri()]);
 
         viewHolder.btnDownLoad.setClickable(this.mGameBetaInfos.get(position)
                 .isDown());
 
-        viewHolder.btnDownLoad.setOnClickListener(new OnClickListener() {
+
+        viewHolder.btnDownLoad.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
                 // TODO Auto-generated method stub
+                Log.i("11111", "----" + position);
 
-                Toast.makeText(mContext, R.string.start_download, Toast.LENGTH_SHORT).show();
+
+//              ViewHolder  myholder = (ViewHolder) listBtn.get(position).getTag();
+//
+//
+//                if (myholder.progressWheelzzgetVisibility() == View.GONE) {
+//
+//                    listBtn.get(position).setVisibility(View.VISIBLE);
+//
+//
+////                    ProgressWheelThread progressWheelThread = new ProgressWheelThread(listBtn.get(position));
+//
+////                    progressWheelThread.start();
+//                    viewHolder.btnDownLoad.setVisibility(View.GONE);
+
+
+//                }
+
 
             }
         });
+
+
         return view;
 
     }
 
-    final static class ViewHolder {
+    static class ViewHolder {
         TextView tvName;
         TextView tvSize;
         TextView tvNum;
         TextView tvInfo;
         Button btnDownLoad;
         ImageView ivGameIco;
+        ProgressWheel progressWheel;
 
     }
+
+
 }

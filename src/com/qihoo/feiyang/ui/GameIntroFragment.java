@@ -24,22 +24,21 @@ import com.qihoo.feiyang.challenger.R;
  * Created by niangang on 2015/7/24.
  */
 public class GameIntroFragment extends Fragment implements View.OnClickListener {
-    private TextView tvRemind, tvGiftGName,tv_app_introduce_expend,tv_introduce_details;
-    private ImageView ivRemind, ivGift,iv_app_introduce_expend;
+    private TextView tvRemind, tvGiftGName, tv_app_introduce_expend, tv_introduce_details;
+    private ImageView ivRemind, ivGift, iv_app_introduce_expend;
     private ImageButton ibtnShare, ibtnEnjoy;
     private Button btnDownload;
-    //收藏按钮状态
+    //???????
     private boolean is_Enjoy_button_pressed;
-    //分享弹出窗口
     private PopupWindow share_popupWindow;
-    //弹出窗口的view
+    //?????????view
     private View popupWindow_view;
-    //弹出窗口的表格布局
+    //????????????
     private TableLayout popupWindow_tableLayout;
 
-    private View  gameIntroView;
+    private View gameIntroView;
 
-    private RelativeLayout rlDetail,rlGift;
+    private RelativeLayout rlDetail, rlGift;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -52,15 +51,14 @@ public class GameIntroFragment extends Fragment implements View.OnClickListener 
         rlGift = (RelativeLayout) gameIntroView.findViewById(R.id.simple_introduce_gift_layout);
 
 
-
         tvRemind = (TextView) gameIntroView.findViewById(R.id.simple_introduce_remain_expend);
         ivRemind = (ImageView) gameIntroView.findViewById(R.id.simple_introduce_remain_expend_imageView);
         ivGift = (ImageView) gameIntroView.findViewById(R.id.simple_introduce_gift_arrow_imageView);
         ibtnShare = (ImageButton) gameIntroView.findViewById(R.id.simple_introduce_share_button);
         btnDownload = (Button) gameIntroView.findViewById(R.id.simple_introduce_download_button);
-        //收藏按钮
+        //?????
         ibtnEnjoy = (ImageButton) gameIntroView.findViewById(R.id.simple_introduce_favorite_button);
-        //分享按钮
+        //?????
         ibtnShare = (ImageButton) gameIntroView.findViewById(R.id.simple_introduce_share_button);
 
         tv_app_introduce_expend = (TextView) gameIntroView.findViewById(R.id.simple_introduce_app_introduce_expend);
@@ -70,30 +68,24 @@ public class GameIntroFragment extends Fragment implements View.OnClickListener 
 
 
         popupWindow_view = inflater.inflate(R.layout.share_popup_window, container, false);
-        popupWindow_tableLayout = (TableLayout)popupWindow_view.findViewById(R.id.share_popup_tablelayout);
-        
-        //分享弹出窗口各个图标ImageView
-        ImageView weixin_friends_circle_imageView = (ImageView)popupWindow_view.findViewById(R.id.share_popup_weixin_friends_circle_imageView);
-        ImageView weixin_imageView = (ImageView)popupWindow_view.findViewById(R.id.share_popup_weixin_imageView);
-        ImageView qq_imageView = (ImageView)popupWindow_view.findViewById(R.id.share_popup_qq_imageView);
-        ImageView qq_zone_imageView = (ImageView)popupWindow_view.findViewById(R.id.share_popup_qq_zone_imageView);
-        ImageView weibo_circle_imageView = (ImageView)popupWindow_view.findViewById(R.id.share_popup_weibo_circle_imageView);
-        ImageView copy_links_imageView = (ImageView)popupWindow_view.findViewById(R.id.share_popup_copy_links_imageView);
-        ImageView qr_code_imageView = (ImageView)popupWindow_view.findViewById(R.id.share_popup_qr_code_imageView);
-        ImageView more_imageView = (ImageView)popupWindow_view.findViewById(R.id.share_popup_more_imageView);
+        popupWindow_tableLayout = (TableLayout) popupWindow_view.findViewById(R.id.share_popup_tablelayout);
+
+        //????????????????ImageView
+        ImageView weixin_friends_circle_imageView = (ImageView) popupWindow_view.findViewById(R.id.share_popup_weixin_friends_circle_imageView);
+        ImageView weixin_imageView = (ImageView) popupWindow_view.findViewById(R.id.share_popup_weixin_imageView);
+        ImageView qq_imageView = (ImageView) popupWindow_view.findViewById(R.id.share_popup_qq_imageView);
+        ImageView qq_zone_imageView = (ImageView) popupWindow_view.findViewById(R.id.share_popup_qq_zone_imageView);
+        ImageView weibo_circle_imageView = (ImageView) popupWindow_view.findViewById(R.id.share_popup_weibo_circle_imageView);
+        ImageView copy_links_imageView = (ImageView) popupWindow_view.findViewById(R.id.share_popup_copy_links_imageView);
+        ImageView qr_code_imageView = (ImageView) popupWindow_view.findViewById(R.id.share_popup_qr_code_imageView);
+        ImageView more_imageView = (ImageView) popupWindow_view.findViewById(R.id.share_popup_more_imageView);
 
 
         share_popupWindow = new PopupWindow(popupWindow_view, ViewGroup.LayoutParams.MATCH_PARENT,
-               2000);
-
+                2000);
 
 
         is_Enjoy_button_pressed = false;
-
-
-
-
-
 
 
         tvRemind.setOnClickListener(this);
@@ -126,12 +118,12 @@ public class GameIntroFragment extends Fragment implements View.OnClickListener 
 
 
                 if (rlDetail.getVisibility() == View.VISIBLE) {
-                    tvRemind.setText("展开");
+                    tvRemind.setText(getString(R.string.expend));
                     ivRemind.setImageResource(R.drawable.arrow_downlad);
                     rlDetail.setVisibility(View.GONE);
 
                 } else {
-                    tvRemind.setText("收起");
+                    tvRemind.setText(getString(R.string.unexpend));
                     ivRemind.setImageResource(R.drawable.ic_arrow_up);
                     rlDetail.setVisibility(View.VISIBLE);
                 }
@@ -140,12 +132,12 @@ public class GameIntroFragment extends Fragment implements View.OnClickListener 
                 break;
             case R.id.simple_introduce_remain_expend_imageView:
                 if (rlDetail.getVisibility() == View.VISIBLE) {
-                    tvRemind.setText("展开");
+                    tvRemind.setText(getString(R.string.expend));
                     ivRemind.setImageResource(R.drawable.arrow_downlad);
                     rlDetail.setVisibility(View.GONE);
 
                 } else {
-                    tvRemind.setText("收起");
+                    tvRemind.setText(getString(R.string.unexpend));
                     ivRemind.setImageResource(R.drawable.ic_arrow_up);
                     rlDetail.setVisibility(View.VISIBLE);
                 }
@@ -154,33 +146,28 @@ public class GameIntroFragment extends Fragment implements View.OnClickListener 
             case R.id.simple_introduce_gift_layout:
 
 
-//                Intent intent = new Intent(getActivity(), GameGiftActivity.class);
-//                startActivity(intent);
-
-
-
                 break;
 
             case R.id.simple_introduce_app_introduce_expend:
                 if (tv_introduce_details.getVisibility() == View.VISIBLE) {
-                    tv_app_introduce_expend.setText("展开");
+                    tv_app_introduce_expend.setText(getString(R.string.expend));
                     iv_app_introduce_expend.setImageResource(R.drawable.arrow_downlad);
                     tv_introduce_details.setVisibility(View.GONE);
 
                 } else {
-                    tv_app_introduce_expend.setText("收起");
+                    tv_app_introduce_expend.setText(getString(R.string.unexpend));
                     iv_app_introduce_expend.setImageResource(R.drawable.ic_arrow_up);
                     tv_introduce_details.setVisibility(View.VISIBLE);
                 }
                 break;
 
             case R.id.simple_introduce_favorite_button:
-                //已经被收藏
+                //????????
                 if (is_Enjoy_button_pressed) {
                     ibtnEnjoy.setImageResource(R.drawable.star_off);
                     is_Enjoy_button_pressed = false;
                 }
-                //还未收藏
+                //??δ???
                 else {
                     ibtnEnjoy.setImageResource(R.drawable.star_on);
                     is_Enjoy_button_pressed = true;
@@ -189,7 +176,7 @@ public class GameIntroFragment extends Fragment implements View.OnClickListener 
 
             case R.id.simple_introduce_share_button:
                 share_popupWindow.showAsDropDown(v);
-                share_popupWindow.showAtLocation(gameIntroView,Gravity.BOTTOM,0,0);
+                share_popupWindow.showAtLocation(gameIntroView, Gravity.BOTTOM, 0, 0);
                 break;
 
             case R.id.share_popup_tablelayout:
@@ -204,7 +191,7 @@ public class GameIntroFragment extends Fragment implements View.OnClickListener 
             case R.id.share_popup_copy_links_imageView:
             case R.id.share_popup_qr_code_imageView:
             case R.id.share_popup_more_imageView:
-                Toast.makeText(getActivity(), "分享成功", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), R.string.ng_share_more, Toast.LENGTH_SHORT).show();
                 share_popupWindow.dismiss();
                 break;
         }

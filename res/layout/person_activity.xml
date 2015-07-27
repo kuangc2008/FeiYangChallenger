@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_carmera"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffffff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#C0D8FC">
+
+        <Button
+            android:id="@+id/ng_btn_person_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/title_back_selector"
+
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/ng_btn_person_back"
+            android:layout_toRightOf="@+id/ng_btn_person_back"
+            android:text="@string/ng_person_title"
+            android:textColor="#0D0D0D"
+            android:textSize="25sp" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/ng_rl1"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/ng_iv_head"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/hyreader_icon" />
+
+        <TextView
+            android:id="@+id/ng_iv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ng_iv_head"
+
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/ng_person_name"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#000000" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="291dp"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/ng_btn_gift"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="43dp"
+            android:text="@string/ng_person_gift" />
+
+        <Button
+            android:id="@+id/ng_btn_instal_his"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignLeft="@+id/ng_btn_gift"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/ng_btn_gift"
+            android:text="@string/ng_person_install_his" />
+
+        <Button
+            android:id="@+id/ng_btn_collection"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/ng_btn_gift"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
+            android:text="@string/ng_person_collection" />
+
+        <Button
+            android:id="@+id/ng_btn_expect_more"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/ng_btn_instal_his"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
+            android:text="@string/ng_person_expect_more" />
+
+
+    </RelativeLayout>
+</LinearLayout>

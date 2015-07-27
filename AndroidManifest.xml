@@ -11,10 +11,11 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name">
+        android:label="@string/app_name"
+        android:name="com.qihoo.feiyang.app.MyApplication">
         <activity
 
-            android:name="com.qihoo.feiyang.ui.HoujhFragment"
+            android:name="com.qihoo.feiyang.ui.SplashActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar"
 
@@ -25,20 +26,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="com.qihoo.feiyang.ui.HoujhFragment"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+
         <activity
             android:name="com.qihoo.feiyang.ui.GameFragment"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
 
         <activity
-            android:name="com.qihoo.feiyang.ui.GameInfoActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
-        <activity
             android:name="com.qihoo.feiyang.ui.GameGiftActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar">
 
         </activity>
-
-        <activity android:name = "com.qihoo.feiyang.challenger.LoginActivity"/>
+        <activity
+            android:name="com.qihoo.feiyang.ui.PersonActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.qihoo.feiyang.ui.PersonGiftActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity
+            android:name="com.qihoo.feiyang.ui.LoginActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity
+            android:name="com.qihoo.feiyang.ui.SignupActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar"/>
 
     </application>
 

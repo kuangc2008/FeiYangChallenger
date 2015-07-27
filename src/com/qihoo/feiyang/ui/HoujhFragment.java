@@ -15,8 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ImageView.ScaleType;
 
+import com.qihoo.feiyang.app.MyApplication;
 import com.qihoo.feiyang.adapter.HoujhFragmentAdapter;
-import com.qihoo.feiyang.challenger.LoginActivity;
 import com.qihoo.feiyang.challenger.R;
 
 import java.util.ArrayList;
@@ -34,24 +34,25 @@ public class HoujhFragment extends FragmentActivity {
     private ViewPager viewPager;
     private TextView tvCurr;
     private TextView tvComing;
+    private Button btnLogin, btnSearch;
     private HoujhCurrentTestFragment currTestFrag;
     private HoujhComingTestFragment comiTestFrag;
     private HoujhFragmentAdapter fragmentAdapter;
-
-    private ViewPager adViewPager; // android-support-v4?§Ö???????
+    private boolean isLogin = false;
+    private ViewPager adViewPager; // android-support-v4??????????
     private List<ImageView> imageViews; // ????????????
     private int[] imageResId; // ??ID
-    private List<View> dots; // ?????????????§»??
-    private Button loginButton;
+    private List<View> dots; // ?????????????????
 
     private int currentItem = 0; // ?????????????
     // An ExecutorService that can schedule commands to run after a given delay,
     // or to execute periodically.
     private ScheduledExecutorService scheduledExecutorService;
-    // ?§Ý???????????
+    // ??????????????
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
-            adViewPager.setCurrentItem(currentItem);// ?§Ý???????????
+            adViewPager.setCurrentItem(currentItem);
+
         }
 
     };
@@ -60,6 +61,12 @@ public class HoujhFragment extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.houjh_fragment_activity);
+
+
+        Intent intent = getIntent();
+        isLogin = intent.getBooleanExtra("isSuccess", false);
+
+
         imageResId = new int[]{R.drawable.title_paper1,
                 R.drawable.title_paper2, R.drawable.title_paper3};
 
@@ -79,7 +86,7 @@ public class HoujhFragment extends FragmentActivity {
 
         adViewPager = (ViewPager) findViewById(R.id.vp);
         adViewPager.setAdapter(new MyAdapter());// ???????ViewPager??????????
-        // ?????????????????ViewPager?§Ö???????????
+        // ?????????????????ViewPager??????????????
         adViewPager.setOnPageChangeListener(new MyPageChangeListener());
         init();
         initState();
@@ -100,7 +107,7 @@ public class HoujhFragment extends FragmentActivity {
     }
 
     /**
-     * ?????§Ý?????
+     * ????????????
      *
      * @author Administrator
      */
@@ -110,7 +117,7 @@ public class HoujhFragment extends FragmentActivity {
             synchronized (viewPager) {
                 System.out.println("currentItem: " + currentItem);
                 currentItem = (currentItem + 1) % imageViews.size();
-                handler.obtainMessage().sendToTarget(); // ???Handler?§Ý???
+                handler.obtainMessage().sendToTarget(); // ???Handler??????
             }
         }
 
@@ -137,6 +144,18 @@ public class HoujhFragment extends FragmentActivity {
         }
 
         public void onPageScrolled(int arg0, float arg1, int arg2) {
+
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+
+        if (MyApplication.isLogin) {
+            btnLogin.setText(" ");
+            btnLogin.setBackgroundResource(R.drawable.hyreader_icon);
 
         }
     }
@@ -210,11 +229,34 @@ public class HoujhFragment extends FragmentActivity {
         viewPager = (ViewPager) this.findViewById(R.id.id_viewpager);
         tvCurr = (TextView) findViewById(R.id.curr_test_textview);
         tvComing = (TextView) findViewById(R.id.comi_test_textview);
+
+        btnLogin = (Button) findViewById(R.id.btn_login);
+
+        if (MyApplication.isLogin) {
+            btnLogin.setText(" ");
+            btnLogin.setBackgroundResource(R.drawable.hyreader_icon);
+
+        }
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (MyApplication.isLogin) {
+
+                    Intent pIntent = new Intent(HoujhFragment.this, PersonActivity.class);
+                    startActivity(pIntent);
+
+                } else {
+                    Intent intent = new Intent(HoujhFragment.this, LoginActivity.class);
+                    startActivity(intent);
+
+                }
+            }
+        });
+
         currTestFrag = new HoujhCurrentTestFragment();
         comiTestFrag = new HoujhComingTestFragment();
         fragmentAdapter = new HoujhFragmentAdapter(getSupportFragmentManager(),
                 fragmentList);
-        loginButton = (Button) findViewById(R.id.login_button);
     }
 
     // initial the FragmentActivity
@@ -226,12 +268,12 @@ public class HoujhFragment extends FragmentActivity {
         viewPager.setOnPageChangeListener(new pageChangeListener());
         tvCurr.setOnClickListener(new IconClickListener());
         tvComing.setOnClickListener(new IconClickListener());
-        loginButton.setOnClickListener(new ButtonClickListener());
+
     }
 
     class pageChangeListener implements ViewPager.OnPageChangeListener {
-        // position :?????—¨??????????????? offset:?????????????
-        // offsetPixels:??????????????¦Ë??
+        // position :?????????????????????? offset:?????????????
+        // offsetPixels:??????????????????
         @Override
         public void onPageScrolled(int i, float v, int i1) {
         }
@@ -250,23 +292,13 @@ public class HoujhFragment extends FragmentActivity {
 
         }
 
-        // state?????§Ö??? ??????????0??1??2?? 1????????? 2????????? 0?????????
+        // state?????????? ??????????0??1??2?? 1????????? 2????????? 0?????????
         @Override
         public void onPageScrollStateChanged(int i) {
             if (i == 2) {
                 int pageNum = viewPager.getCurrentItem();
                 viewPager.setCurrentItem(pageNum);
             }
-        }
-    }
-
-    class ButtonClickListener implements View.OnClickListener{
-
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent();
-            intent.setClass(HoujhFragment.this, LoginActivity.class);
-            startActivity(intent);
         }
     }
 

@@ -14,7 +14,7 @@ import com.qihoo.feiyang.challenger.R;
 public class GameBBSFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View currTestView = inflater.inflate(R.layout.game_gift_paper,
+        View currTestView = inflater.inflate(R.layout.game_bbs_paper,
                 container, false);
         return currTestView;
     }

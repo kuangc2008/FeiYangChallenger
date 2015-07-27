@@ -47,6 +47,31 @@
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:textSize="30sp"
+            android:text="用户昵称"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:id="@+id/usr_nickname_textView" />
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="请输入你萌萌的昵称"
+            android:textSize="23sp"
+            android:textColorHint="@android:color/black"
+            android:textColor="@android:color/black"
+            android:id="@+id/usr_nick_name_editText"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
             android:text="密码"
             android:gravity="center"
             android:layout_gravity="center"
@@ -89,6 +114,7 @@
             android:id="@+id/sign_up_password_again_editText"
             android:layout_gravity="center_vertical" />
     </LinearLayout>
+
 
     <Button
         android:layout_width="150dp"

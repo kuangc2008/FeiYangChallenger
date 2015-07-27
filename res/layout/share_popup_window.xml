@@ -2,194 +2,198 @@
 
 
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/share_popup_tablelayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/share_popup_tablelayout"
-    android:background="#66000000"
-    android:paddingTop="20dp"
-    android:gravity="bottom"
     android:layout_gravity="bottom"
-    android:clickable="true">
+    android:background="#00000000"
+    android:clickable="true"
+    android:gravity="bottom"
+    android:paddingTop="20dp">
 
     <TableRow
-        android:paddingTop="20dp"
-        android:background="@color/white">
+        android:background="@color/white"
+        android:paddingTop="20dp">
+
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
             android:id="@+id/share_popup_weixin_friends_circle_imageView"
-            android:src="@drawable/weixin_friend_circle"
-            android:scaleType="fitCenter"
-            android:clickable="true"/>
-
-        <ImageView
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/weixin_friend_circle" />
+
+        <ImageView
             android:id="@+id/share_popup_weixin_imageView"
-            android:src="@drawable/weixin"
-            android:clickable="true"/>
-
-        <ImageView
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:src="@drawable/weixin" />
+
+        <ImageView
             android:id="@+id/share_popup_qq_imageView"
-            android:src="@drawable/qq"
-            android:clickable="true"/>
-
-        <ImageView
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:src="@drawable/qq" />
+
+        <ImageView
             android:id="@+id/share_popup_qq_zone_imageView"
-            android:src="@drawable/qq_zone"
-            android:clickable="true"/>
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:src="@drawable/qq_zone" />
     </TableRow>
 
     <TableRow
-        android:paddingTop="5dp"
-        android:background="@color/white">
+        android:background="@color/white"
+        android:paddingTop="5dp">
+
         <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
             android:id="@+id/share_popup_weixin_friends_circle_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
+            android:singleLine="true"
             android:text="微信朋友圈"
-            android:textSize="11sp"
             android:textColor="@color/black"
-            android:gravity="center"
 
-            android:singleLine="true"/>
+            android:textSize="11sp" />
 
         <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
             android:id="@+id/share_popup_weixin_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
+            android:singleLine="true"
             android:text="微信好友"
-            android:textSize="11sp"
             android:textColor="@color/black"
-            android:gravity="center"
-            android:singleLine="true"/>
+            android:textSize="11sp" />
 
         <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
             android:id="@+id/share_popup_QQ_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
+            android:singleLine="true"
             android:text="QQ好友"
-            android:textSize="11sp"
             android:textColor="@color/black"
-            android:gravity="center"
-            android:singleLine="true"/>
+            android:textSize="11sp" />
 
         <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
             android:id="@+id/share_popup_QQ_zone_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
+            android:singleLine="true"
             android:text="QQ空间"
-            android:textSize="11sp"
             android:textColor="@color/black"
-            android:gravity="center"
-            android:singleLine="true"/>
+            android:textSize="11sp" />
     </TableRow>
 
     <TableRow
-        android:paddingTop="20dp"
-        android:background="@color/white">
+        android:background="@color/white"
+        android:paddingTop="20dp">
+
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
             android:id="@+id/share_popup_weibo_circle_imageView"
-            android:src="@drawable/weibo"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:clickable="true"
             android:scaleType="fitCenter"
-            android:clickable="true"/>
+            android:src="@drawable/weibo" />
 
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
             android:id="@+id/share_popup_copy_links_imageView"
-            android:src="@drawable/copy_links"
-            android:clickable="true"/>
-
-        <ImageView
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:src="@drawable/copy_links" />
+
+        <ImageView
             android:id="@+id/share_popup_qr_code_imageView"
-            android:src="@drawable/qr_code"
-            android:clickable="true"/>
-
-        <ImageView
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:src="@drawable/qr_code" />
+
+        <ImageView
             android:id="@+id/share_popup_more_imageView"
-            android:src="@drawable/more"
-            android:clickable="true"/>
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:src="@drawable/more" />
     </TableRow>
 
     <TableRow
-        android:paddingTop="5dp"
+        android:background="@color/white"
         android:paddingBottom="20dp"
-        android:background="@color/white">
+        android:paddingTop="5dp">
+
         <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
             android:id="@+id/share_popup_weibo_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
+            android:singleLine="true"
             android:text="微博"
-            android:textSize="11sp"
             android:textColor="@color/black"
-            android:gravity="center"
-            android:singleLine="true"/>
+            android:textSize="11sp" />
 
         <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
             android:id="@+id/share_popup_copy_links_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
+            android:singleLine="true"
             android:text="复制链接"
-            android:textSize="11sp"
             android:textColor="@color/black"
-            android:gravity="center"
-            android:singleLine="true"/>
+            android:textSize="11sp" />
 
         <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
             android:id="@+id/share_popup_QR_code_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="二维码"
-            android:textSize="11sp"
-            android:textColor="@color/black"
             android:gravity="center"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:text="二维码"
+            android:textColor="@color/black"
+            android:textSize="11sp" />
 
         <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
             android:id="@+id/share_popup_more_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="更多"
-            android:textSize="11sp"
-            android:textColor="@color/black"
             android:gravity="center"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            android:text="更多"
+            android:textColor="@color/black"
+            android:textSize="11sp" />
     </TableRow>
 
     <TableRow
-        android:paddingTop="20dp"
-        android:background="@color/white">
+        android:background="@color/white"
+        android:paddingTop="20dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:background="@color/white"/>
+            android:background="@color/white" />
     </TableRow>
 </TableLayout>

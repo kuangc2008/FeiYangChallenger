@@ -5,13 +5,13 @@ package com.qihoo.feiyang.entity;
  *
  * @author niangang
  */
-public class GameBetaInfo {
+public class GameGiftInfo {
 
     private String gNameStr;// 内测游戏名字
     private int gNum; // 游戏下载数量
     private String gSizeStr; // 游戏大小
     private String gInfoStr; // 游戏详情
-    private boolean isDown;// 是否下载�?
+    private boolean isDown;// 是否下载�?
     private String gIcoUrl;// 游戏图标地址
     private int gIcoUri;
 
@@ -23,7 +23,7 @@ public class GameBetaInfo {
         this.gIcoUri = gIcoUri;
     }
 
-    public GameBetaInfo() {
+    public GameGiftInfo() {
         // TODO Auto-generated constructor stub
 
         this.gNameStr = null;

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="#C0D8FC"
+        android:orientation="horizontal">
+
+
+        <ImageButton
+            android:id="@+id/btn_game_info_back"
+            android:layout_width="50dp"
+            android:layout_height="fill_parent"
+            android:background="@drawable/title_back_normal" />
+
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="50dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/nav_back_pressed" />
+
+
+    </RelativeLayout>
+
+    <View
+
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#FF909090" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@android:color/white">
+
+
+        <ImageView
+            android:id="@+id/iv_game"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ico_game1" />
+
+
+        <TextView
+            android:id="@+id/tv_game_name"
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:layout_alignTop="@+id/iv_game"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="35dp"
+            android:layout_toEndOf="@+id/iv_game"
+            android:layout_toRightOf="@+id/iv_game"
+            android:text="@string/game_name"
+            android:textColor="@android:color/black"
+            android:textSize="23sp" />
+
+
+        <TextView
+            android:id="@+id/tv_game_mark"
+            android:layout_width="130dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@+id/tv_game_name"
+            android:layout_alignStart="@+id/tv_game_name"
+            android:layout_below="@+id/tv_game_name"
+            android:layout_marginTop="5dp"
+            android:text="@string/game_mark"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_game_download_nums"
+            android:layout_width="130dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/tv_game_mark"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/tv_game_size"
+            android:layout_toRightOf="@+id/tv_game_size"
+            android:text="@string/game_download_times"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/tv_game_size"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@+id/tv_game_mark"
+            android:layout_alignStart="@+id/tv_game_mark"
+            android:layout_below="@+id/tv_game_mark"
+            android:layout_marginTop="5dp"
+            android:text="@string/game_space"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+
+    <View
+
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#FF909090" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/tv_intro_game"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/game_introduct"
+            android:textSize="22sp" />
+
+        <View
+
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#FF909090" />
+
+        <TextView
+            android:id="@+id/tv_comment_game"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/game_comment"
+            android:textSize="22sp" />
+
+        <View
+
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#FF909090" />
+
+        <TextView
+            android:id="@+id/tv_bbs_game"
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/game_bbs"
+            android:textSize="22sp" />
+
+        <View
+
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#FF909090" />
+
+        <TextView
+            android:id="@+id/tv_gift_game"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/game_gift"
+            android:textSize="22sp" />
+
+    </LinearLayout>
+
+    <View
+
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#FF909090" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#000000"
+        android:flipInterval="30"
+        android:persistentDrawingCache="animation" />
+
+
+</LinearLayout>

@@ -64,7 +64,7 @@ public final class R {
         public static final int houjh_fragment_activity=0x7f030003;
         public static final int houjh_test_frag=0x7f030004;
         public static final int houjh_test_tab=0x7f030005;
-        public static final int maxw_simple_introduce_layout=0x7f030006;
+        public static final int game_info_paper =0x7f030006;
     }
     public static final class menu {
         public static final int main=0x7f060000;

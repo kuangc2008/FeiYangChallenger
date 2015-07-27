@@ -11,28 +11,30 @@ import com.qihoo.feiyang.challenger.R;
  */
 public class SplashActivity extends Activity {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.splash_activity);
+        setContentView(R.layout.game_info_title_activity);
 
-		new Thread() {
+//        new Thread() {
+//
+//            @Override
+//            public void run() {
+//                super.run();
+//                try {
+//                    Thread.sleep(2000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//
+//                Intent intent = new Intent(SplashActivity.this,
+//                        HoujhFragment.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//        }.start();
 
-			@Override
-			public void run() {
-				super.run();
-				try {
-					Thread.sleep(2000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
 
-				Intent intent = new Intent(SplashActivity.this,
-						MainActivity.class);
-				startActivity(intent);
-			}
-		}.start();
-
-	}
+    }
 }

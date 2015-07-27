@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/empty_main"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/zhuanqu"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="#C0D8FC"
+        android:orientation="horizontal">
+
+
+        <ImageButton
+            android:id="@+id/btn_gift_back"
+            android:layout_width="50dp"
+            android:layout_height="fill_parent"
+            android:background="@drawable/title_back_normal" />
+
+
+        <Button
+            android:id="@+id/btn_gift_search"
+            android:layout_width="50dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/nav_back_pressed" />
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/zhuanqu" />
+</LinearLayout>

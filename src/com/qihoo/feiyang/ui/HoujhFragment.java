@@ -10,14 +10,11 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ImageView.ScaleType;
-import android.widget.Toast;
 
 import com.qihoo.feiyang.adapter.HoujhFragmentAdapter;
-import com.qihoo.feiyang.challenger.LoginActivity;
 import com.qihoo.feiyang.challenger.R;
 
 import java.util.ArrayList;
@@ -33,27 +30,25 @@ public class HoujhFragment extends FragmentActivity {
 
     private List<Fragment> fragmentList = new ArrayList<Fragment>();
     private ViewPager viewPager;
-    private TextView curr_test;
-    private TextView comi_test;
+    private TextView tvCurr;
+    private TextView tvComing;
     private HoujhCurrentTestFragment currTestFrag;
     private HoujhComingTestFragment comiTestFrag;
     private HoujhFragmentAdapter fragmentAdapter;
 
-    private ViewPager adViewPager; // android-support-v4中的滑动组件
-    private List<ImageView> imageViews; // 滑动的图片集合
-    private int[] imageResId; // 图片ID
-    private List<View> dots; // 图片标题正文的那些点
-    public LoginOnClick LoginOnClick;//定义一个全局OnClick对象
-    private Button Login_btn;
+    private ViewPager adViewPager; // android-support-v4?е???????
+    private List<ImageView> imageViews; // ????????????
+    private int[] imageResId; // ??ID
+    private List<View> dots; // ?????????????Щ??
 
-    private int currentItem = 0; // 当前图片的索引号
+    private int currentItem = 0; // ?????????????
     // An ExecutorService that can schedule commands to run after a given delay,
     // or to execute periodically.
     private ScheduledExecutorService scheduledExecutorService;
-    // 切换当前显示的图片
+    // ?л???????????
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
-            adViewPager.setCurrentItem(currentItem);// 切换当前显示的图片
+            adViewPager.setCurrentItem(currentItem);// ?л???????????
         }
 
     };
@@ -65,8 +60,8 @@ public class HoujhFragment extends FragmentActivity {
         imageResId = new int[]{R.drawable.title_paper1,
                 R.drawable.title_paper2, R.drawable.title_paper3};
 
+
         imageViews = new ArrayList<ImageView>();
-        // 初始化图片资源
         for (int i = 0; i < imageResId.length; i++) {
             ImageView imageView = new ImageView(this);
             imageView.setImageResource(imageResId[i]);
@@ -74,30 +69,22 @@ public class HoujhFragment extends FragmentActivity {
             imageViews.add(imageView);
         }
 
-        // 点
         dots = new ArrayList<View>();
         dots.add(findViewById(R.id.v_dot0));
         dots.add(findViewById(R.id.v_dot1));
         dots.add(findViewById(R.id.v_dot2));
 
         adViewPager = (ViewPager) findViewById(R.id.vp);
-        adViewPager.setAdapter(new MyAdapter());// 设置填充ViewPager页面的适配器
-        // 设置一个监听器，当ViewPager中的页面改变时调用
+        adViewPager.setAdapter(new MyAdapter());// ???????ViewPager??????????
+        // ?????????????????ViewPager?е???????????
         adViewPager.setOnPageChangeListener(new MyPageChangeListener());
         init();
         initState();
-
-
-        LoginOnClick = new LoginOnClick();
-        Login_btn=(Button)this.findViewById(R.id.overflow_button);
-
-        Login_btn.setOnClickListener(LoginOnClick);
     }
 
     @Override
     protected void onStart() {
         scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-        // 当Activity显示出来后，每两秒钟切换一次图片显示
         scheduledExecutorService.scheduleAtFixedRate(new ScrollTask(), 1, 2,
                 TimeUnit.SECONDS);
         super.onStart();
@@ -105,13 +92,12 @@ public class HoujhFragment extends FragmentActivity {
 
     @Override
     protected void onStop() {
-        // 当Activity不可见的时候停止切换
         scheduledExecutorService.shutdown();
         super.onStop();
     }
 
     /**
-     * 换行切换任务
+     * ?????л?????
      *
      * @author Administrator
      */
@@ -121,17 +107,13 @@ public class HoujhFragment extends FragmentActivity {
             synchronized (viewPager) {
                 System.out.println("currentItem: " + currentItem);
                 currentItem = (currentItem + 1) % imageViews.size();
-                handler.obtainMessage().sendToTarget(); // 通过Handler切换图片
+                handler.obtainMessage().sendToTarget(); // ???Handler?л???
             }
         }
 
     }
 
-    /**
-     * 当ViewPager中页面的状态发生改变时调用
-     *
-     * @author Administrator
-     */
+
     private class MyPageChangeListener implements
             ViewPager.OnPageChangeListener {
         private int oldPosition = 0;
@@ -157,7 +139,7 @@ public class HoujhFragment extends FragmentActivity {
     }
 
     /**
-     * 填充ViewPager页面的适配器
+     * ???ViewPager??????????
      *
      * @author Administrator
      */
@@ -169,7 +151,7 @@ public class HoujhFragment extends FragmentActivity {
         }
 
         @Override
-        public Object instantiateItem(View arg0, final int position) {
+        public Object instantiateItem(View arg0, int position) {
 
 
             ((ViewPager) arg0).addView(imageViews.get(position));
@@ -181,9 +163,8 @@ public class HoujhFragment extends FragmentActivity {
                 @Override
                 public void onClick(View v) {
 
-
-                    Toast.makeText(getApplicationContext(), position+"  ", Toast.LENGTH_SHORT).show();
-
+                    Intent gameIntent = new Intent(HoujhFragment.this, GameFragment.class);
+                    startActivity(gameIntent);
                 }
             });
 
@@ -224,8 +205,8 @@ public class HoujhFragment extends FragmentActivity {
 
     private void init() {
         viewPager = (ViewPager) this.findViewById(R.id.id_viewpager);
-        curr_test = (TextView) this.findViewById(R.id.curr_test_textview);
-        comi_test = (TextView) this.findViewById(R.id.comi_test_textview);
+        tvCurr = (TextView) findViewById(R.id.curr_test_textview);
+        tvComing = (TextView) findViewById(R.id.comi_test_textview);
         currTestFrag = new HoujhCurrentTestFragment();
         comiTestFrag = new HoujhComingTestFragment();
         fragmentAdapter = new HoujhFragmentAdapter(getSupportFragmentManager(),
@@ -239,37 +220,38 @@ public class HoujhFragment extends FragmentActivity {
         viewPager.setAdapter(fragmentAdapter);
         viewPager.setCurrentItem(0);
         viewPager.setOnPageChangeListener(new pageChangeListener());
-        curr_test.setOnClickListener(new IconClickListener());
-        comi_test.setOnClickListener(new IconClickListener());
+        tvCurr.setOnClickListener(new IconClickListener());
+        tvComing.setOnClickListener(new IconClickListener());
+
     }
 
     class pageChangeListener implements ViewPager.OnPageChangeListener {
-        // position :当前页面，及你点击滑动的页面 offset:当前页面偏移的百分比
-        // offsetPixels:当前页面偏移的像素位置
+        // position :?????棬??????????????? offset:?????????????
+        // offsetPixels:??????????????λ??
         @Override
         public void onPageScrolled(int i, float v, int i1) {
         }
 
         @Override
         public void onPageSelected(int i) {
+            if (0 == i) {
+                tvCurr.setTextColor(android.graphics.Color.BLUE);
+                tvComing.setTextColor(Color.BLACK);
+
+            } else {
+                tvComing.setTextColor(Color.BLUE);
+                tvCurr.setTextColor(Color.BLACK);
+            }
+
+
         }
 
-        // state滑动中的状态 有三种状态（0，1，2） 1：正在滑动 2：滑动完毕 0：什么都没做
+        // state?????е??? ??????????0??1??2?? 1????????? 2????????? 0?????????
         @Override
         public void onPageScrollStateChanged(int i) {
             if (i == 2) {
                 int pageNum = viewPager.getCurrentItem();
                 viewPager.setCurrentItem(pageNum);
-                switch (pageNum) {
-                    case 0:
-                        clean();
-                        curr_test.setBackgroundColor(Color.GRAY);
-                        break;
-                    case 1:
-                        clean();
-                        comi_test.setBackgroundColor(Color.GRAY);
-                        break;
-                }
             }
         }
     }
@@ -279,13 +261,13 @@ public class HoujhFragment extends FragmentActivity {
         @Override
         public void onClick(View v) {
 
-            clean();
             int viewId = v.getId();
             int viewItem = viewId2Item(viewId);
             if (viewItem == -1) {
                 return;
             } else {
                 viewPager.setCurrentItem(viewItem);
+
             }
 
         }
@@ -295,32 +277,18 @@ public class HoujhFragment extends FragmentActivity {
         int viewItem;
         switch (viewId) {
             case R.id.curr_test_textview:
-                curr_test.setBackgroundColor(Color.GRAY);
                 viewItem = 0;
+                tvCurr.setTextColor(android.graphics.Color.BLUE);
+                tvComing.setTextColor(Color.BLACK);
                 break;
             case R.id.comi_test_textview:
-                comi_test.setBackgroundColor(Color.GRAY);
+                tvComing.setTextColor(Color.BLUE);
+                tvCurr.setTextColor(Color.BLACK);
                 viewItem = 1;
                 break;
             default:
                 viewItem = -1;
         }
         return viewItem;
-    }
-    public void clean(){
-        curr_test.setBackgroundColor(Color.TRANSPARENT);
-        comi_test.setBackgroundColor(Color.TRANSPARENT);
-    }
-    public class LoginOnClick implements View.OnClickListener {
-        public void onClick(View view) {
-            switch (view.getId()) {
-                case R.id.overflow_button:
-                    Intent intentLogin = new Intent(HoujhFragment.this, LoginActivity.class);
-                    startActivity(intentLogin);
-                    break;
-                default:
-                    break;
-            }
-        }
     }
 }

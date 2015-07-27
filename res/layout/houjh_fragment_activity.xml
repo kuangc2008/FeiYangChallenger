@@ -28,7 +28,8 @@
 
     <include layout="@layout/title_viewpaper" />
 
-    <include layout="@layout/houjh_test_tab" />
+    <include layout="@layout/houjh_test_tab"
+      />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/id_viewpager"

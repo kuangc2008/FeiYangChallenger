@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="120dp"
+    android:background="@drawable/contact_listitem"
+    android:descendantFocusability="blocksDescendants">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        >
+
+        <TextView
+            android:id="@+id/tv_gift_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:singleLine="true"
+            android:text="@string/gift_name_tv"
+            android:textSize="24sp"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_bag_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:singleLine="true"
+            android:text="已被领取1234次"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_today_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:singleLine="true"
+            android:text="礼包详情 : 1.2.3.4.5"
+            android:textSize="15sp" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_gift_receive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:focusable="false"
+        android:text="领取"
+        android:textSize="20sp" />
+
+
+</RelativeLayout>

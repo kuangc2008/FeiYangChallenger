@@ -7,20 +7,20 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:background="@android:color/black"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/browse_back_Button"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:id="@+id/browse_back_button"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_gravity="left|center_vertical"
                 android:background="@android:color/black"
                 android:src="@drawable/browse_back_icon" />
@@ -28,14 +28,14 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/search_Button"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_gravity="right|center_vertical"
                 android:background="@android:color/black"
                 android:src="@drawable/search_icon" />
@@ -44,73 +44,73 @@
 
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:background="@android:color/white">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="160dp"
+        android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/iv_game"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/ico_game1" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_game_name"
-            android:layout_width="150dp"
-            android:layout_height="35dp"
-            android:layout_alignTop="@+id/iv_game"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="35dp"
-            android:layout_toEndOf="@+id/iv_game"
-            android:layout_toRightOf="@+id/iv_game"
-            android:text="@string/game_name"
-            android:textColor="@android:color/black"
-            android:textSize="23sp" />
+            <ImageView
+                android:id="@+id/game_imageView"
+                android:layout_width="130dp"
+                android:layout_height="120dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="center"
+                android:src="@drawable/ico_game1" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/tv_game_mark"
-            android:layout_width="130dp"
-            android:layout_height="30dp"
-            android:layout_alignLeft="@+id/tv_game_name"
-            android:layout_alignStart="@+id/tv_game_name"
-            android:layout_below="@+id/tv_game_name"
-            android:layout_marginTop="5dp"
-            android:text="@string/game_mark"
-            android:textColor="@android:color/black"
-            android:textSize="20sp" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_game_download_nums"
-            android:layout_width="130dp"
-            android:layout_height="30dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/tv_game_mark"
-            android:layout_marginTop="5dp"
-            android:layout_toEndOf="@+id/tv_game_size"
-            android:layout_toRightOf="@+id/tv_game_size"
-            android:text="@string/game_download_times"
-            android:textColor="@android:color/black"
-            android:textSize="20sp" />
+            <TextView
+                android:id="@+id/game_name_textView"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/game_name"
+                android:textColor="@android:color/black"
+                android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/tv_game_size"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_alignLeft="@+id/tv_game_mark"
-            android:layout_alignStart="@+id/tv_game_mark"
-            android:layout_below="@+id/tv_game_mark"
-            android:layout_marginTop="5dp"
-            android:text="@string/game_space"
-            android:textColor="@android:color/black"
-            android:textSize="20sp" />
+            <TextView
+                android:id="@+id/game_mark_textView"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:text="@string/game_mark"
+                android:textColor="@android:color/black"
+                android:textSize="20dp" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/game_space_textView"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:text="@string/game_space"
+                android:textColor="@android:color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/game_download_times_textView"
+                android:layout_width="130dp"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:text="@string/game_download_times"
+                android:textColor="@android:color/black"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -124,7 +124,7 @@
             android:layout_height="35dp"
             android:layout_weight="1"
             android:background="@drawable/icon_no_pressed"
-            android:text="@string/Game_introduct"
+            android:text="@string/game_introduct"
             android:textColor="@android:color/black" />
 
         <Button
@@ -133,7 +133,7 @@
             android:layout_height="35dp"
             android:layout_weight="1"
             android:background="@drawable/icon_no_pressed"
-            android:text="@string/Game_comment"
+            android:text="@string/game_comment"
             android:textColor="@android:color/black" />
 
         <Button
@@ -142,7 +142,7 @@
             android:layout_height="35dp"
             android:layout_weight="1"
             android:background="@drawable/icon_no_pressed"
-            android:text="@string/Game_BBS"
+            android:text="@string/game_bbs"
             android:textColor="@android:color/black" />
 
         <Button
@@ -151,7 +151,7 @@
             android:layout_height="35dp"
             android:layout_weight="1"
             android:background="@drawable/icon_no_pressed"
-            android:text="@string/Game_gift"
+            android:text="@string/game_gift"
             android:textColor="@android:color/black" />
     </LinearLayout>
 
@@ -164,5 +164,6 @@
         android:background="#000000"
         android:flipInterval="30"
         android:persistentDrawingCache="animation" />
+
 
 </LinearLayout>

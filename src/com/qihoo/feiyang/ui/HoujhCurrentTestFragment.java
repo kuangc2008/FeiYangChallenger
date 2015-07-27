@@ -9,17 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.AdapterView.OnItemClickListener;
 
 import com.example.widget.PullDownListView;
 import com.qihoo.feiyang.adapter.TodayBetaAdapter;
-import com.qihoo.feiyang.challenger.GameActivity;
 import com.qihoo.feiyang.challenger.R;
 import com.qihoo.feiyang.entity.GameBetaInfo;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 /**
  * Created by houjianhua on 2015/7/21.
@@ -35,8 +32,6 @@ public class HoujhCurrentTestFragment extends Fragment implements
     private String[] gNameStrs;
     private int maxAount = 20;// 设置了最大数据值
     private Handler mHandler = new Handler();
-
-    private itemClickListener itemClickListener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,12 +52,19 @@ public class HoujhCurrentTestFragment extends Fragment implements
         mListView.setAdapter(todayAdapter);
         mPullDownView.setMore(true);// 这里设置true表示还有更多加载，设置为false底部将不显示更多
 
-        itemClickListener = new itemClickListener();
-        mListView.setOnItemClickListener(itemClickListener);
 
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+                Intent gameIntent = new Intent(getActivity(), GameFragment.class);
+
+                startActivity(gameIntent);
+            }
+        });
         return currTestView;
     }
-
 
 
     /**
@@ -153,14 +155,6 @@ public class HoujhCurrentTestFragment extends Fragment implements
 
         }
 
-    }
-    public class itemClickListener implements OnItemClickListener{
-
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Intent gameIntent=new Intent(getActivity(),GameActivity.class);
-            startActivity(gameIntent);
-        }
     }
 
 }

@@ -50,7 +50,14 @@
     <string name="brief_intro">简介</string>
 
     <string name="download_num">次下载</string>
-
+    <string name="game_name">游戏名称</string>
+    <string name="game_mark">游戏评分</string>
+    <string name="game_space">游戏大小</string>
+    <string name="game_download_times">游戏下载次数</string>
+    <string name="game_introduct">简介</string>
+    <string name="game_comment">评论</string>
+    <string name="game_bbs">专区</string>
+    <string name="game_gift">活动礼包</string>
     <string name="game_name">游戏名称</string>
 
     <string name="game_mark">游戏评分</string>
@@ -70,6 +77,8 @@
     <!--ma xiao wei test********************-->
     <string name="expend">展开</string>
     <string name="unexpend">收起</string>
+
+    <string name="gift_name_tv">《乱斗西游》XX礼包</string>
     <!--**************************************-->
 
     <!--注册界面错误提示字符串********************-->

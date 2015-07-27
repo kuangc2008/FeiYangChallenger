@@ -1,47 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
+    android:id="@+id/share_popup_tablelayout"
+    android:background="#66000000"
     android:paddingTop="20dp"
-    android:paddingBottom="15dp"
-    android:paddingLeft="8dp"
-    android:paddingRight="8dp"
-    android:gravity="center">
+    android:gravity="bottom"
+    android:layout_gravity="bottom"
+    android:clickable="true">
 
-    <TableRow>
+    <TableRow
+        android:paddingTop="20dp"
+        android:background="@color/white">
         <ImageView
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:id="@+id/share_popup_weixin_friends_circle_imageView"
             android:src="@drawable/weixin_friend_circle"
-            android:scaleType="fitCenter"/>
+            android:scaleType="fitCenter"
+            android:clickable="true"/>
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:id="@+id/share_popup_weixin_imageView"
-            android:src="@drawable/weixin"/>
+            android:src="@drawable/weixin"
+            android:clickable="true"/>
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:id="@+id/share_popup_QQ_imageView"
-            android:src="@drawable/qq"/>
+            android:id="@+id/share_popup_qq_imageView"
+            android:src="@drawable/qq"
+            android:clickable="true"/>
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:id="@+id/share_popup_QQ_zone_imageView"
-            android:src="@drawable/qq_zone"/>
+            android:id="@+id/share_popup_qq_zone_imageView"
+            android:src="@drawable/qq_zone"
+            android:clickable="true"/>
     </TableRow>
 
     <TableRow
-        android:layout_marginTop="5dp">
+        android:paddingTop="5dp"
+        android:background="@color/white">
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="0dp"
@@ -89,39 +98,46 @@
     </TableRow>
 
     <TableRow
-        android:layout_marginTop="20dp">
+        android:paddingTop="20dp"
+        android:background="@color/white">
         <ImageView
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:id="@+id/share_popup_weibo_circle_imageView"
             android:src="@drawable/weibo"
-            android:scaleType="fitCenter"/>
+            android:scaleType="fitCenter"
+            android:clickable="true"/>
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:id="@+id/share_popup_copy_links_imageView"
-            android:src="@drawable/copy_links"/>
+            android:src="@drawable/copy_links"
+            android:clickable="true"/>
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:id="@+id/share_popup_QR_code_imageView"
-            android:src="@drawable/qr_code"/>
+            android:id="@+id/share_popup_qr_code_imageView"
+            android:src="@drawable/qr_code"
+            android:clickable="true"/>
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:id="@+id/share_popup_more_imageView"
-            android:src="@drawable/more"/>
+            android:src="@drawable/more"
+            android:clickable="true"/>
     </TableRow>
 
     <TableRow
-        android:layout_marginTop="5dp">
+        android:paddingTop="5dp"
+        android:paddingBottom="20dp"
+        android:background="@color/white">
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="0dp"
@@ -165,5 +181,15 @@
             android:textColor="@color/black"
             android:gravity="center"
             android:singleLine="true"/>
+    </TableRow>
+
+    <TableRow
+        android:paddingTop="20dp"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/white"/>
     </TableRow>
 </TableLayout>

@@ -785,13 +785,14 @@
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:background="@color/white"
+        android:id="@+id/simple_introduce_bottom_layout"
         android:gravity="center"
         android:orientation="vertical">
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"
-            android:layout_below="@+id/simple_introduce_version_layout"
+            android:layout_alignParentTop="true"
             android:background="@color/black" />
 
         <LinearLayout

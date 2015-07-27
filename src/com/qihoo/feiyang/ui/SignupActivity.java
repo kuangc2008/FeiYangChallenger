@@ -29,12 +29,14 @@ public class SignupActivity extends Activity {
         final EditText userName_edit = (EditText) findViewById(R.id.sign_up_usr_name_editText);
         final EditText password_edit = (EditText) findViewById(R.id.sign_up_password_editText);
         final EditText password_again_edit = (EditText) findViewById(R.id.sign_up_password_again_editText);
+        final EditText nick_name=(EditText)findViewById(R.id.usr_nick_name_editText);
 
         SignupButton.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 String user_name = userName_edit.getText().toString();
                 String password = password_edit.getText().toString();
                 String password_again = password_again_edit.getText().toString();
+                String nickname = nick_name.getText().toString();
                 //?§Ø???????????????
                 if (m_interface.isUserExist(user_name)) {
                     Toast.makeText(SignupActivity.this, R.string.user_name_has_existed, Toast.LENGTH_SHORT).show();
@@ -47,7 +49,7 @@ public class SignupActivity extends Activity {
                         return;
                     }
                 //?????
-                if (m_interface.userRegist(user_name, password)) {
+                if (m_interface.userRegist(user_name, password,nickname)) {
                     //???????????????????....
                     Toast.makeText(SignupActivity.this, R.string.signup_success, Toast.LENGTH_SHORT).show();
                     Intent returntologin = new Intent(SignupActivity.this, LoginActivity.class);

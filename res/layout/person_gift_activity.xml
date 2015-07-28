@@ -6,30 +6,34 @@
     android:background="#ffffffff"
     android:orientation="vertical">
 
+
     <RelativeLayout
         android:id="@+id/rl1"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="#C0D8FC">
+        android:layout_height="45dp"
+        android:background="#2c93fc">
 
         <Button
             android:id="@+id/ng_btn_gift_back"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:background="@drawable/title_back_selector"
-
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/ng_btn_gift_back"
-            android:layout_toRightOf="@+id/ng_btn_gift_back"
             android:text="@string/ng_person_gift"
-            android:textColor="#0D0D0D"
-            android:textSize="25sp" />
+
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/ng_btn_gift_back"
+            android:layout_toEndOf="@+id/ng_btn_gift_back" />
     </RelativeLayout>
+
+
 
 
     <View

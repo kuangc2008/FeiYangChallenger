@@ -1,9 +1,14 @@
 package com.qihoo.feiyang.ui;
 
 
+import android.content.Intent;
+import android.os.Handler;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +23,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.qihoo.feiyang.challenger.R;
+import com.qihoo.feiyang.internet.DownLoad;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -39,6 +51,26 @@ public class GameIntroFragment extends Fragment implements View.OnClickListener 
     private View gameIntroView;
 
     private RelativeLayout rlDetail, rlGift;
+    private int[] imageResId; // ??ID
+
+    private List<ImageView> imageViews; // ????????????
+
+
+    private ViewPager viewPager;
+
+    private int currentItem = 0; // ?????????????
+    // An ExecutorService that can schedule commands to run after a given delay,
+    // or to execute periodically.
+    private ScheduledExecutorService scheduledExecutorService;
+    // ??????????????
+    private Handler handler = new Handler() {
+        public void handleMessage(android.os.Message msg) {
+            viewPager.setCurrentItem(currentItem);
+
+        }
+
+    };
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -53,18 +85,12 @@ public class GameIntroFragment extends Fragment implements View.OnClickListener 
 
         tvRemind = (TextView) gameIntroView.findViewById(R.id.simple_introduce_remain_expend);
         ivRemind = (ImageView) gameIntroView.findViewById(R.id.simple_introduce_remain_expend_imageView);
-        ivGift = (ImageView) gameIntroView.findViewById(R.id.simple_introduce_gift_arrow_imageView);
         ibtnShare = (ImageButton) gameIntroView.findViewById(R.id.simple_introduce_share_button);
         btnDownload = (Button) gameIntroView.findViewById(R.id.simple_introduce_download_button);
         //?????
         ibtnEnjoy = (ImageButton) gameIntroView.findViewById(R.id.simple_introduce_favorite_button);
         //?????
         ibtnShare = (ImageButton) gameIntroView.findViewById(R.id.simple_introduce_share_button);
-
-        tv_app_introduce_expend = (TextView) gameIntroView.findViewById(R.id.simple_introduce_app_introduce_expend);
-        iv_app_introduce_expend = (ImageView) gameIntroView.findViewById(R.id.simple_introduce_app_introduce_expend_imageView);
-
-        tv_introduce_details = (TextView) gameIntroView.findViewById(R.id.simple_introduce_app_introduce_details);
 
 
         popupWindow_view = inflater.inflate(R.layout.share_popup_window, container, false);
@@ -89,14 +115,11 @@ public class GameIntroFragment extends Fragment implements View.OnClickListener 
 
 
         tvRemind.setOnClickListener(this);
-        ivGift.setOnClickListener(this);
         ivRemind.setOnClickListener(this);
         rlGift.setOnClickListener(this);
         ibtnShare.setOnClickListener(this);
         ibtnEnjoy.setOnClickListener(this);
         popupWindow_tableLayout.setOnClickListener(this);
-        tv_app_introduce_expend.setOnClickListener(this);
-        iv_app_introduce_expend.setOnClickListener(this);
 
         weixin_friends_circle_imageView.setOnClickListener(this);
         weixin_imageView.setOnClickListener(this);
@@ -106,8 +129,107 @@ public class GameIntroFragment extends Fragment implements View.OnClickListener 
         copy_links_imageView.setOnClickListener(this);
         qr_code_imageView.setOnClickListener(this);
         more_imageView.setOnClickListener(this);
+        btnDownload.setOnClickListener(this);
 
+
+        imageResId = new int[]{R.drawable.title_paper1,
+                R.drawable.title_paper2, R.drawable.title_paper3};
+
+        imageViews = new ArrayList<ImageView>();
+        for (int i = 0; i < imageResId.length; i++) {
+            ImageView imageView = new ImageView(getActivity());
+            imageView.setImageResource(imageResId[i]);
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            imageViews.add(imageView);
+        }
+
+
+        viewPager = (ViewPager) gameIntroView.findViewById(R.id.id_viewpager1);
+        viewPager.setAdapter(new MyAdapter());// ???????ViewPager??????????
+        // ?????????????????ViewPager??????????????
+//        viewPager.setOnPageChangeListener(new MyPageChangeListener());
         return gameIntroView;
+    }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
+        scheduledExecutorService.scheduleAtFixedRate(new ScrollTask(), 1, 2,
+                TimeUnit.SECONDS);
+    }
+
+    /**
+     * ????????????
+     *
+     * @author Administrator
+     */
+    private class ScrollTask implements Runnable {
+
+        public void run() {
+            synchronized (viewPager) {
+                System.out.println("currentItem: " + currentItem);
+                currentItem = (currentItem + 1) % imageViews.size();
+                handler.obtainMessage().sendToTarget(); // ???Handler??????
+            }
+        }
+
+    }
+
+    @Override
+    public void onStop() {
+        scheduledExecutorService.shutdown();
+        super.onStop();
+    }
+
+
+    private class MyAdapter extends PagerAdapter {
+
+        @Override
+        public int getCount() {
+            return imageResId.length;
+        }
+
+        @Override
+        public Object instantiateItem(View arg0, int position) {
+
+
+            ((ViewPager) arg0).addView(imageViews.get(position));
+
+
+            return imageViews.get(position);
+        }
+
+        @Override
+        public void destroyItem(View arg0, int arg1, Object arg2) {
+            ((ViewPager) arg0).removeView((View) arg2);
+        }
+
+        @Override
+        public boolean isViewFromObject(View arg0, Object arg1) {
+            return arg0 == arg1;
+        }
+
+        @Override
+        public void restoreState(Parcelable arg0, ClassLoader arg1) {
+
+        }
+
+        @Override
+        public Parcelable saveState() {
+            return null;
+        }
+
+        @Override
+        public void startUpdate(View arg0) {
+
+        }
+
+        @Override
+        public void finishUpdate(View arg0) {
+
+        }
     }
 
     @Override
@@ -148,18 +270,6 @@ public class GameIntroFragment extends Fragment implements View.OnClickListener 
 
                 break;
 
-            case R.id.simple_introduce_app_introduce_expend:
-                if (tv_introduce_details.getVisibility() == View.VISIBLE) {
-                    tv_app_introduce_expend.setText(getString(R.string.expend));
-                    iv_app_introduce_expend.setImageResource(R.drawable.arrow_downlad);
-                    tv_introduce_details.setVisibility(View.GONE);
-
-                } else {
-                    tv_app_introduce_expend.setText(getString(R.string.unexpend));
-                    iv_app_introduce_expend.setImageResource(R.drawable.ic_arrow_up);
-                    tv_introduce_details.setVisibility(View.VISIBLE);
-                }
-                break;
 
             case R.id.simple_introduce_favorite_button:
                 //????????
@@ -194,6 +304,22 @@ public class GameIntroFragment extends Fragment implements View.OnClickListener 
                 Toast.makeText(getActivity(), R.string.ng_share_more, Toast.LENGTH_SHORT).show();
                 share_popupWindow.dismiss();
                 break;
+            case R.id.simple_introduce_download_button:
+                String uri = "http://gdown.baidu.com/data/wisegame/4ae6d2d7378e6cdf/QQ_122.apk ";
+
+                try {
+                    DownLoad downLoad = new DownLoad(getActivity(), uri);
+                    if (downLoad.checkFileExit()) {
+                        Toast.makeText(getActivity(), "you have already has the APK.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        downLoad.processDownLoad();
+                    }
+                } catch (Exception e) {
+
+                    Toast.makeText(getActivity(), "download Error", Toast.LENGTH_SHORT).show();
+                }
+                break;
+
         }
 
     }

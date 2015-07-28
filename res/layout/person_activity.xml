@@ -9,16 +9,15 @@
     <RelativeLayout
         android:id="@+id/rl1"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="#C0D8FC">
+        android:layout_height="45dp"
+        android:background="#2c93fc">
 
         <Button
             android:id="@+id/ng_btn_person_back"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:background="@drawable/title_back_selector"
-
-
             />
 
         <TextView
@@ -28,8 +27,9 @@
             android:layout_toEndOf="@+id/ng_btn_person_back"
             android:layout_toRightOf="@+id/ng_btn_person_back"
             android:text="@string/ng_person_title"
-            android:textColor="#0D0D0D"
-            android:textSize="25sp" />
+
+            android:textColor="@color/white"
+            android:textSize="23sp" />
     </RelativeLayout>
 
 
@@ -37,6 +37,7 @@
         android:id="@+id/ng_rl1"
         android:layout_width="match_parent"
         android:layout_height="170dp"
+        android:background="@drawable/person_activity_background"
         android:orientation="vertical">
 
 
@@ -46,7 +47,7 @@
             android:layout_height="100dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:background="@drawable/hyreader_icon" />
+            android:background="@drawable/touxiang" />
 
         <TextView
             android:id="@+id/ng_iv_name"
@@ -69,53 +70,52 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="291dp"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
 
-        <Button
+        <ImageButton
             android:id="@+id/ng_btn_gift"
-            android:layout_width="100dp"
+            android:layout_width="148dp"
             android:layout_height="100dp"
-
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="50dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="43dp"
-            android:text="@string/ng_person_gift" />
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/person_my_gift"
+            android:scaleType="fitXY" />
 
-        <Button
+        <ImageButton
             android:id="@+id/ng_btn_instal_his"
-            android:layout_width="100dp"
+            android:layout_width="148dp"
             android:layout_height="100dp"
             android:layout_alignLeft="@+id/ng_btn_gift"
-            android:layout_alignParentBottom="true"
             android:layout_alignStart="@+id/ng_btn_gift"
-            android:text="@string/ng_person_install_his" />
+            android:layout_below="@+id/ng_btn_gift"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/person_my_install_history"
+            android:scaleType="fitXY" />
 
-        <Button
+        <ImageButton
             android:id="@+id/ng_btn_collection"
-            android:layout_width="100dp"
+            android:layout_width="148dp"
             android:layout_height="100dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
+            android:layout_alignLeft="@+id/ng_btn_expect_more"
+            android:layout_alignStart="@+id/ng_btn_expect_more"
             android:layout_alignTop="@+id/ng_btn_gift"
-            android:layout_marginEnd="50dp"
-            android:layout_marginRight="50dp"
-            android:text="@string/ng_person_collection" />
+            android:background="@drawable/person_my_enjoy"
+            android:scaleType="fitXY" />
 
-        <Button
+        <ImageButton
             android:id="@+id/ng_btn_expect_more"
-            android:layout_width="100dp"
+            android:layout_width="148dp"
             android:layout_height="100dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignTop="@+id/ng_btn_instal_his"
-            android:layout_marginEnd="50dp"
-            android:layout_marginRight="50dp"
-            android:text="@string/ng_person_expect_more" />
+            android:layout_marginRight="20dp"
+            android:background="@drawable/person_my_want_more"
+            android:scaleType="fitXY" />
 
 
     </RelativeLayout>

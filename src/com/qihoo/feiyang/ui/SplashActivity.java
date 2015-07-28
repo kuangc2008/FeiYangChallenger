@@ -22,10 +22,6 @@ public class SplashActivity extends Activity {
         setContentView(R.layout.splash_activity);
 
 
-//        pwTwo = (ProgressWheel) findViewById(R.id.progress_bar_two);
-//        new Thread(r).start();
-
-
         new Thread() {
 
             @Override

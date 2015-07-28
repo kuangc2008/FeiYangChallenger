@@ -33,6 +33,7 @@ public class HoujhFragment extends FragmentActivity {
     private List<Fragment> fragmentList = new ArrayList<Fragment>();
     private ViewPager viewPager;
     private TextView tvCurr;
+    private View viewCurr, viewComing;
     private TextView tvComing;
     private Button btnLogin, btnSearch;
     private HoujhCurrentTestFragment currTestFrag;
@@ -232,6 +233,8 @@ public class HoujhFragment extends FragmentActivity {
 
         btnLogin = (Button) findViewById(R.id.btn_login);
 
+        viewCurr = findViewById(R.id.view_curr);
+        viewComing = findViewById(R.id.view_coming);
         if (MyApplication.isLogin) {
             btnLogin.setText(" ");
             btnLogin.setBackgroundResource(R.drawable.hyreader_icon);
@@ -265,6 +268,12 @@ public class HoujhFragment extends FragmentActivity {
         fragmentList.add(comiTestFrag);
         viewPager.setAdapter(fragmentAdapter);
         viewPager.setCurrentItem(0);
+        tvCurr.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_press));
+        tvComing.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_normal));
+        viewCurr.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.tab_txt_press));
+        viewComing.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.tab_txt_normal));
+
+
         viewPager.setOnPageChangeListener(new pageChangeListener());
         tvCurr.setOnClickListener(new IconClickListener());
         tvComing.setOnClickListener(new IconClickListener());
@@ -281,12 +290,20 @@ public class HoujhFragment extends FragmentActivity {
         @Override
         public void onPageSelected(int i) {
             if (0 == i) {
-                tvCurr.setTextColor(android.graphics.Color.BLUE);
-                tvComing.setTextColor(Color.BLACK);
+                tvCurr.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_press));
+                tvComing.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_normal));
+                viewCurr.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.tab_txt_press));
+                viewComing.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.tab_txt_normal));
+
 
             } else {
-                tvComing.setTextColor(Color.BLUE);
-                tvCurr.setTextColor(Color.BLACK);
+                tvComing.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_press));
+                tvCurr.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_normal));
+
+
+                viewComing.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.tab_txt_press));
+                viewCurr.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.tab_txt_normal));
+
             }
 
 
@@ -324,12 +341,23 @@ public class HoujhFragment extends FragmentActivity {
         switch (viewId) {
             case R.id.curr_test_textview:
                 viewItem = 0;
-                tvCurr.setTextColor(android.graphics.Color.BLUE);
-                tvComing.setTextColor(Color.BLACK);
+
+                tvCurr.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_press));
+                tvComing.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_normal));
+                viewCurr.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.tab_txt_press));
+                viewComing.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.tab_txt_normal));
+
                 break;
             case R.id.comi_test_textview:
-                tvComing.setTextColor(Color.BLUE);
-                tvCurr.setTextColor(Color.BLACK);
+
+                tvComing.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_press));
+                tvCurr.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_normal));
+
+
+                viewComing.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.tab_txt_press));
+                viewCurr.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.tab_txt_normal));
+
+
                 viewItem = 1;
                 break;
             default:

@@ -3,7 +3,7 @@
 
 
     <!--edit by caoyu********************-->
-    <string name="app_name">FeiYangChallenger</string>
+    <string name="app_name">手机内测游戏助手</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="Login_head">登陆360账号</string>
@@ -31,7 +31,7 @@
     <string name="loading">正在加载。。。</string>
     <string name="seen_more">更多</string>
     <string name="start_download">开始下载</string>
-    <string name="open_download">开放下载</string>
+    <string name="open_download">2015-08-01开发内测</string>
 
     <string name="view_details">查看详情</string>
 
@@ -40,26 +40,33 @@
     <string name="brief_intro">简介</string>
 
     <string name="download_num">次下载</string>
-    <string name="game_name">游戏名称</string>
+    <string name="game_name">乱斗西游</string>
     <string name="game_mark">游戏评分</string>
-    <string name="game_space">游戏大小</string>
-    <string name="game_download_times">游戏下载次数</string>
+    <string name="game_space"> </string>
+    <string name="game_download_times">8843 次下载 | 22.0M </string>
     <string name="game_introduct">简介</string>
     <string name="game_comment">评论</string>
     <string name="game_bbs">专区</string>
     <string name="game_gift">活动礼包</string>
 
+
     <!--ma xiao wei test********************-->
     <string name="expend">展开</string>
     <string name="unexpend">收起</string>
 
-    <string name="gift_name_tv">《乱斗西游》XX礼包</string>
+    <string name="gift_name_tv">《乱斗西游》礼包</string>
+
+    <string name="gift_already_times">已被领取1234次</string>
+    <string name="gift_info">礼包详情:可获得清醒药酒20瓶</string>
+    <string name="gift_end_time">2015-12-01 截止</string>
     <!--**************************************-->
 
     <!--注册界面错误提示字符串********************-->
     <string name="user_name_has_existed">用户名已存在</string>
     <string name="password_not_same">密码输入不一致</string>
     <string name="signup_success">注册成功</string>
+    <string name="login_title">用户登录</string>
+    <string name="signup_title">用户注册</string>
     <!--**************************************-->
 
     <!--Ng 7.27 个人主页-->
@@ -72,7 +79,7 @@
 
 
     <string name="ng_share_more">分享成功！</string>
-
+    <string name="luandouxiyou">是最具人气的MOBA手游，最酣畅的MOBA对战震撼来袭。</string>
     <!--LoginInterface字符串********************-->
     <string name="login_interface_error_string_nomal">正常</string>
     <string name="login_interface_error_string_invalidUserName">非法用户名</string>
@@ -81,4 +88,5 @@
     <string name="login_interface_error_string_userNameNotExist">用户名不存在</string>
     <string name="login_interface_error_string_invalidNickName">非法昵称</string>
     <string name="login_interface_error_string_nickNameHasExisted">昵称已存在</string>
-    <!--**************************************--></resources>
+    <!--**************************************-->
+</resources>

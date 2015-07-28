@@ -1,129 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:id="@+id/imageView"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/login_head" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#2c93fc">
 
+
+        <ImageButton
+            android:id="@+id/btn_signup_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/title_back_normal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/signup_title"
+            android:textColor="@color/white"
+            android:textSize="23sp" />
+    </RelativeLayout>
 
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/sign_up_usr_name_textView"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="账号"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:id="@+id/sign_up_usr_name_textView" />
+            android:layout_gravity="bottom"
+            android:gravity="right|bottom"
+            android:text="用户名"
+            android:textColor="#2c93fc"
+            android:textSize="24sp" />
 
         <EditText
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/Login_usr_name"
-            android:textSize="25sp"
-            android:textColorHint="@android:color/black"
-            android:textColor="@android:color/black"
             android:id="@+id/sign_up_usr_name_editText"
-            android:layout_gravity="center_vertical" />
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="0dp"
+            android:background="@null"
+            android:gravity="bottom"
+            android:hint="@string/Login_usr_name"
+            android:paddingLeft="20dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="20sp" />
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="4dp"
+        android:background="@color/black" />
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/usr_nickname_textView"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="用户昵称"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:id="@+id/usr_nickname_textView" />
+            android:layout_gravity="bottom"
+            android:gravity="right"
+            android:text="昵称"
+            android:textColor="#2c93fc"
+            android:textSize="24sp" />
 
         <EditText
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:hint="请输入你萌萌的昵称"
-            android:textSize="23sp"
-            android:textColorHint="@android:color/black"
-            android:textColor="@android:color/black"
             android:id="@+id/usr_nick_name_editText"
-            android:layout_gravity="center_vertical" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="密码"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:id="@+id/sign_up_password_textView" />
-
-        <EditText
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:hint="@string/Login_password"
-            android:textSize="25sp"
-            android:inputType="textPassword"
-            android:textColorHint="@android:color/black"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="20dp"
+            android:background="@null"
+            android:hint="请输入你萌萌的昵称"
+            android:paddingLeft="0dp"
             android:textColor="@android:color/black"
-            android:id="@+id/sign_up_password_editText"
-            android:layout_gravity="center_vertical" />
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="20sp" />
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="4dp"
+        android:background="@color/black" />
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/sign_up_password_textView"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="确认密码"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:id="@+id/sign_up_password_again_textView" />
+            android:layout_gravity="bottom"
+            android:gravity="right"
+            android:text="密码"
+            android:textColor="#2c93fc"
+            android:textSize="24sp" />
 
         <EditText
+            android:id="@+id/sign_up_password_editText"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="20dp"
+            android:background="@null"
+            android:hint="@string/Login_password"
+            android:inputType="textPassword"
+            android:paddingLeft="0dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="4dp"
+        android:background="@color/black" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/sign_up_password_again_textView"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="right"
+            android:text="确认密码"
+            android:textColor="#2c93fc"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/sign_up_password_again_editText"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="20dp"
+            android:background="@null"
             android:hint="请再次输入密码"
             android:inputType="textPassword"
-            android:textSize="25sp"
-            android:textColorHint="@android:color/black"
+            android:paddingLeft="0dp"
             android:textColor="@android:color/black"
-            android:id="@+id/sign_up_password_again_editText"
-            android:layout_gravity="center_vertical" />
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="20sp" />
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="4dp"
+        android:background="@color/black" />
 
     <Button
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:text="注册"
-        android:textColor="@android:color/black"
-        android:background="@android:color/darker_gray"
         android:id="@+id/sign_up_button"
-        android:layout_gravity="center_horizontal" />
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/signup_button_selector"
+        android:text="注册"
+        android:textColor="@android:color/white"
+        android:textSize="24dp" />
 
 
 </LinearLayout>

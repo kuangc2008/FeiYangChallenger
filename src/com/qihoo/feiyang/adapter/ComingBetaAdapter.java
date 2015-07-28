@@ -1,6 +1,7 @@
 package com.qihoo.feiyang.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import com.qihoo.feiyang.challenger.R;
 import com.qihoo.feiyang.entity.GameBetaInfo;
+import com.qihoo.feiyang.internet.DownLoad;
 
 import java.util.List;
 
@@ -58,8 +60,7 @@ public class ComingBetaAdapter extends BaseAdapter {
             viewHolder.ivGameIco = (ImageView) view
                     .findViewById(R.id.iv_coming_game);
 
-            viewHolder.btnMoreInfo = (Button) view
-                    .findViewById(R.id.btn_coming_more);
+
             viewHolder.btnRemind = (Button) view
                     .findViewById(R.id.btn_coming_remind);
             view.setTag(viewHolder);
@@ -67,31 +68,23 @@ public class ComingBetaAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
         viewHolder.tvName.setText(this.mBetaInfos.get(position).getgNameStr());
-        viewHolder.tvSize.setText(this.mBetaInfos.get(position).getgSize());
-        viewHolder.tvNum.setText(this.mBetaInfos.get(position).getgNum()
-                + mContext.getResources().getString(R.string.open_download));
-        viewHolder.tvInfo.setText(this.mBetaInfos.get(position).getgInfoStr());
+        viewHolder.tvSize.setText("");
+        viewHolder.tvNum.setText(mContext.getResources().getString(R.string.open_download));
+        viewHolder.tvNum.setTextColor(Color.RED);
+        viewHolder.tvInfo.setText("《" + this.mBetaInfos.get(position)
+                .getgNameStr() + "》" + mContext.getString(R.string.luandouxiyou));
 
         viewHolder.ivGameIco.setImageResource(imgIds[this.mBetaInfos.get(
                         position).getgIcoUri()]
 
         );
 
-        viewHolder.btnMoreInfo.setOnClickListener(new OnClickListener() {
 
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-
-                Toast.makeText(mContext, R.string.view_details, Toast.LENGTH_SHORT).show();
-
-            }
-        });
         viewHolder.btnRemind.setOnClickListener(new OnClickListener() {
 
             public void onClick(View v) {
                 // TODO Auto-generated method stub
 
-                Toast.makeText(mContext, R.string.time_reminder, Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -104,7 +97,6 @@ public class ComingBetaAdapter extends BaseAdapter {
         TextView tvSize;
         TextView tvNum;
         TextView tvInfo;
-        Button btnMoreInfo;
         Button btnRemind;
         ImageView ivGameIco;
 

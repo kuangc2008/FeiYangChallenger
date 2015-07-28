@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
+import com.qihoo.feiyang.app.MyApplication;
 import com.qihoo.feiyang.challenger.R;
 
 /**
@@ -15,7 +17,9 @@ import com.qihoo.feiyang.challenger.R;
  */
 public class PersonActivity extends Activity implements OnClickListener {
 
-    private Button btnGiftBack, btnGift, btnCollect, btnInstall, btnExpect;
+    private Button btnGiftBack;
+    private ImageButton btnGift, btnCollect, btnInstall, btnExpect;
+    private TextView tvName;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -23,17 +27,18 @@ public class PersonActivity extends Activity implements OnClickListener {
         setContentView(R.layout.person_activity);
 
         btnGiftBack = (Button) findViewById(R.id.ng_btn_person_back);
-        btnGift = (Button) findViewById(R.id.ng_btn_gift);
-        btnCollect = (Button) findViewById(R.id.ng_btn_collection);
-        btnInstall = (Button) findViewById(R.id.ng_btn_instal_his);
-        btnExpect = (Button) findViewById(R.id.ng_btn_expect_more);
-
+        btnGift = (ImageButton) findViewById(R.id.ng_btn_gift);
+        btnCollect = (ImageButton) findViewById(R.id.ng_btn_collection);
+        btnInstall = (ImageButton) findViewById(R.id.ng_btn_instal_his);
+        btnExpect = (ImageButton) findViewById(R.id.ng_btn_expect_more);
+        tvName = (TextView) findViewById(R.id.ng_iv_name);
         btnGiftBack.setOnClickListener(this);
         btnGift.setOnClickListener(this);
         btnCollect.setOnClickListener(this);
         btnInstall.setOnClickListener(this);
         btnExpect.setOnClickListener(this);
 
+        tvName.setText(MyApplication.nickStr);
 
     }
 

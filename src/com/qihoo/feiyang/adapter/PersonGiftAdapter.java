@@ -53,6 +53,7 @@ public class PersonGiftAdapter extends BaseAdapter {
             viewHolder.btnMoreInfo = (Button) view
                     .findViewById(R.id.btn_gift_receive);
 
+
             view.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) view.getTag();

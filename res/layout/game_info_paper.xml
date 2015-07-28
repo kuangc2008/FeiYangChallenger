@@ -15,62 +15,85 @@
             android:layout_height="match_parent">
 
             <!--提醒部分******************************-->
+            <ImageView
+                android:id="@+id/simple_introduce_remind1_imageView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/game_info_safe" />
+
             <TextView
                 android:id="@+id/simple_introduce_remind1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_gravity="center_vertical"
+                android:layout_alignTop="@+id/simple_introduce_remind1_imageView"
+                android:layout_toRightOf="@+id/simple_introduce_remind1_imageView"
                 android:gravity="center_vertical"
-                android:paddingBottom="8dp"
-                android:paddingLeft="8dp"
-                android:paddingTop="5dp"
+                android:paddingLeft="2dp"
+                android:paddingTop="2dp"
                 android:singleLine="true"
-                android:text="提醒1"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:text="安全"
+                android:textColor="@color/darkGrey"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/simple_introduce_remind2_imageView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignTop="@+id/simple_introduce_remind1_imageView"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/simple_introduce_remind1"
+                android:background="@drawable/game_info_safe" />
 
             <TextView
                 android:id="@+id/simple_introduce_remind2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/simple_introduce_remind1"
-                android:layout_marginLeft="12dp"
-                android:layout_toRightOf="@+id/simple_introduce_remind1"
-                android:paddingBottom="8dp"
-                android:paddingLeft="8dp"
-                android:paddingTop="5dp"
+                android:layout_alignTop="@+id/simple_introduce_remind1_imageView"
+                android:layout_toRightOf="@+id/simple_introduce_remind2_imageView"
+                android:gravity="center_vertical"
+                android:paddingLeft="2dp"
+                android:paddingTop="2dp"
                 android:singleLine="true"
-                android:text="提醒2"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:text="免费"
+                android:textColor="@color/darkGrey"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/simple_introduce_remind3_imageView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignTop="@+id/simple_introduce_remind1_imageView"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/simple_introduce_remind2"
+                android:background="@drawable/game_info_safe" />
 
             <TextView
                 android:id="@+id/simple_introduce_remind3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/simple_introduce_remind2"
-                android:layout_marginLeft="12dp"
-                android:layout_toRightOf="@+id/simple_introduce_remind2"
-                android:paddingBottom="8dp"
-                android:paddingLeft="8dp"
-                android:paddingTop="5dp"
+                android:layout_alignTop="@+id/simple_introduce_remind1_imageView"
+
+                android:layout_toRightOf="@+id/simple_introduce_remind3_imageView"
+                android:gravity="center_vertical"
+                android:paddingLeft="2dp"
+                android:paddingTop="2dp"
                 android:singleLine="true"
-                android:text="提醒3"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:text="无广告"
+                android:textColor="@color/darkGrey"
+                android:textSize="15sp" />
 
             <!--提醒功能组的“收起”箭头-->
             <ImageView
                 android:id="@+id/simple_introduce_remain_expend_imageView"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_alignTop="@+id/simple_introduce_remind3"
-                android:layout_marginRight="5dp"
                 android:layout_toLeftOf="@+id/simple_introduce_remain_expend"
                 android:paddingBottom="5dp"
-                android:paddingLeft="8dp"
-                android:paddingTop="10dp"
+                android:paddingTop="8dp"
                 android:src="@drawable/ic_arrow_up" />
 
             <TextView
@@ -78,16 +101,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/simple_introduce_remind1_imageView"
                 android:layout_gravity="center_vertical"
+                android:layout_marginRight="15dp"
                 android:clickable="true"
                 android:gravity="center_vertical"
-                android:paddingBottom="8dp"
-                android:paddingRight="15dp"
-                android:paddingTop="5dp"
+                android:paddingLeft="2dp"
+                android:paddingTop="2dp"
                 android:singleLine="true"
                 android:text="收起"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textColor="@color/tab_txt_press"
+                android:textSize="15sp" />
 
             <!--提醒详情部分，设置GONE的时候可以收起-->
             <RelativeLayout
@@ -96,70 +120,95 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/simple_introduce_remind1">
 
+                <ImageView
+                    android:id="@+id/simple_introduce_remind1_details_imageView"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/game_info_safe" />
+
                 <TextView
                     android:id="@+id/simple_introduce_remind1_details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_gravity="center_vertical"
+                    android:layout_alignTop="@+id/simple_introduce_remind1_details_imageView"
+                    android:layout_toRightOf="@+id/simple_introduce_remind1_details_imageView"
                     android:gravity="center_vertical"
-                    android:paddingBottom="5dp"
-                    android:paddingLeft="8dp"
-                    android:paddingTop="5dp"
+                    android:paddingLeft="2dp"
+                    android:paddingTop="2dp"
                     android:singleLine="true"
-                    android:text="提醒1详情"
-                    android:textColor="#000000"
+                    android:text="已通过360安全卫士检测"
+                    android:textColor="@color/darkGrey"
                     android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/simple_introduce_remind2_details_imageView"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/simple_introduce_remind1_details_imageView"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/game_info_safe" />
 
                 <TextView
                     android:id="@+id/simple_introduce_remind2_details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@+id/simple_introduce_remind1_details"
-                    android:layout_gravity="center_vertical"
+                    android:layout_alignTop="@+id/simple_introduce_remind2_details_imageView"
+                    android:layout_toRightOf="@+id/simple_introduce_remind2_details_imageView"
                     android:gravity="center_vertical"
-                    android:paddingBottom="5dp"
-                    android:paddingLeft="8dp"
-                    android:paddingTop="5dp"
+                    android:paddingLeft="2dp"
+                    android:paddingTop="2dp"
                     android:singleLine="true"
-                    android:text="提醒2详情"
-                    android:textColor="#000000"
+                    android:text="资费：免费"
+                    android:textColor="@color/darkGrey"
                     android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/simple_introduce_remind3_details_imageView"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/simple_introduce_remind2_details_imageView"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/game_info_safe" />
 
                 <TextView
                     android:id="@+id/simple_introduce_remind3_details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@+id/simple_introduce_remind2_details"
-                    android:layout_gravity="center_vertical"
+                    android:layout_alignTop="@+id/simple_introduce_remind3_details_imageView"
+                    android:layout_toRightOf="@+id/simple_introduce_remind3_details_imageView"
                     android:gravity="center_vertical"
-                    android:paddingBottom="5dp"
-                    android:paddingLeft="8dp"
-                    android:paddingTop="5dp"
+                    android:paddingLeft="2dp"
+                    android:paddingTop="2dp"
                     android:singleLine="true"
-                    android:text="提醒3详情"
-                    android:textColor="#000000"
+                    android:text="广告：无广告"
+                    android:textColor="@color/darkGrey"
                     android:textSize="15sp" />
 
                 <Button
                     android:id="@+id/simple_introduce_complain_button"
                     android:layout_width="60dp"
                     android:layout_height="30dp"
+                    android:layout_alignBottom="@+id/simple_introduce_remind3_details"
                     android:layout_alignParentRight="true"
-                    android:layout_alignTop="@+id/simple_introduce_remind3_details"
                     android:layout_below="@+id/simple_introduce_remind2_details"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginRight="8dp"
+                    android:layout_marginRight="15dp"
                     android:background="@drawable/simple_introduce_button_selector"
                     android:gravity="center"
                     android:paddingBottom="5dp"
                     android:paddingTop="5dp"
                     android:singleLine="true"
                     android:text="举报"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
             </RelativeLayout>
 
 
@@ -168,7 +217,7 @@
                 android:layout_height="1px"
                 android:layout_below="@+id/simple_introduce_remind_details_RLayout"
                 android:layout_marginTop="10dp"
-                android:background="#000000" />
+                android:background="@color/black" />
             <!--***********************************************-->
 
             <!--应用描述******************************-->
@@ -179,45 +228,42 @@
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/simple_introduce_remind_details_RLayout"
                 android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
                 android:gravity="center_vertical"
-                android:paddingBottom="8dp"
-                android:paddingLeft="8dp"
-                android:paddingTop="5dp"
+                android:paddingTop="2dp"
                 android:singleLine="true"
                 android:text="应用描述："
-                android:textColor="@color/black"
+                android:textColor="@color/tab_txt_press"
                 android:textSize="20sp" />
 
             <!--“收起”箭头-->
             <ImageView
                 android:id="@+id/simple_introduce_app_introduce_expend_imageView"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignTop="@+id/simple_introduce_app_introduce"
-                android:layout_marginRight="5dp"
-                android:layout_toLeftOf="@+id/simple_introduce_app_introduce_expend"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignTop="@+id/simple_introduce_app_introduce_expend"
+                android:layout_toLeftOf="@+id/simple_introduce_remain_expend"
                 android:paddingBottom="5dp"
-                android:paddingLeft="8dp"
-                android:paddingTop="10dp"
+                android:paddingTop="8dp"
                 android:src="@drawable/ic_arrow_up" />
 
             <TextView
                 android:id="@+id/simple_introduce_app_introduce_expend"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/simple_introduce_app_introduce"
                 android:layout_alignParentRight="true"
-                android:layout_alignTop="@+id/simple_introduce_app_introduce"
                 android:layout_gravity="center_vertical"
+                android:layout_marginRight="15dp"
                 android:clickable="true"
                 android:gravity="center_vertical"
-                android:paddingBottom="8dp"
-                android:paddingRight="15dp"
-                android:paddingTop="5dp"
+                android:paddingLeft="2dp"
+                android:paddingTop="2dp"
                 android:singleLine="true"
                 android:text="收起"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textColor="@color/tab_txt_press"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/simple_introduce_app_introduce_details"
@@ -226,13 +272,14 @@
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/simple_introduce_app_introduce"
                 android:layout_gravity="center"
-                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:gravity="left"
                 android:paddingBottom="8dp"
-                android:paddingLeft="8dp"
-                android:paddingTop="5dp"
+                android:paddingTop="2dp"
                 android:singleLine="true"
                 android:text="应用描述详情"
-                android:textColor="#000000"
+                android:textColor="@color/darkGrey"
                 android:textSize="15sp" />
             <!--*****************************************-->
 
@@ -243,7 +290,10 @@
                 android:layout_below="@+id/simple_introduce_app_introduce_details"
                 android:background="#000000" />
 
+
             <!--礼包活动******************************-->
+
+
             <RelativeLayout
                 android:id="@+id/simple_introduce_gift_layout"
                 android:layout_width="match_parent"
@@ -266,7 +316,7 @@
                     android:singleLine="true"
                     android:text="礼包活动"
                     android:textColor="#000000"
-                    android:textSize="20sp" />
+                    android:textSize="23sp" />
 
                 <ImageView
                     android:id="@+id/simple_introduce_gift_imageView"
@@ -279,52 +329,73 @@
                     android:paddingRight="5dp"
                     android:paddingTop="5dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/ic_launcher" />
+                    android:src="@drawable/gift_icon" />
 
                 <TextView
                     android:id="@+id/simple_introduce_gift_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/simple_introduce_gift_imageView"
-                    android:layout_marginLeft="5dp"
-                    android:layout_toRightOf="@+id/simple_introduce_gift_imageView"
+                    android:layout_alignTop="@+id/simple_introduce_gift"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
                     android:gravity="center_vertical"
                     android:paddingBottom="8dp"
                     android:paddingLeft="8dp"
                     android:paddingTop="10dp"
                     android:singleLine="true"
-                    android:text="乱斗西游礼包"
+                    android:text="@string/gift_name_tv"
                     android:textColor="#000000"
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/simple_introduce_gift_contain"
+                    android:id="@+id/simple_introduce_gift_times"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/simple_introduce_gift_imageView"
-                    android:layout_marginLeft="5dp"
+
+                    android:layout_below="@+id/simple_introduce_gift_name"
+                    android:layout_toEndOf="@+id/simple_introduce_gift_imageView"
                     android:layout_toRightOf="@+id/simple_introduce_gift_imageView"
                     android:gravity="center_vertical"
-                    android:paddingBottom="8dp"
-                    android:paddingLeft="8dp"
+                    android:paddingLeft="5dp"
                     android:paddingTop="5dp"
-                    android:text="包含1,2,3,4"
-                    android:textColor="#000000"
+                    android:text="@string/gift_already_times"
+                    android:textColor="@color/tab_txt_low"
                     android:textSize="15sp" />
 
-                <!--礼包活动“>”箭头-->
-                <ImageView
-                    android:id="@+id/simple_introduce_gift_arrow_imageView"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerInParent="true"
-                    android:layout_marginRight="25dp"
+                <TextView
+                    android:id="@+id/simple_introduce_gift_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/simple_introduce_gift_times"
+                    android:layout_toEndOf="@+id/simple_introduce_gift_imageView"
+                    android:layout_toRightOf="@+id/simple_introduce_gift_imageView"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/gift_info"
+                    android:textColor="@color/tab_txt_low"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/simple_introduce_gift_end_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/simple_introduce_gift_imageView"
+                    android:layout_toRightOf="@+id/simple_introduce_gift_imageView"
+                    android:gravity="center_vertical"
                     android:paddingBottom="5dp"
-                    android:paddingLeft="8dp"
-                    android:paddingTop="8dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/right_arrow" />
+                    android:paddingLeft="5dp"
+                    android:paddingTop="15dp"
+                    android:text="@string/gift_end_time"
+                    android:textColor="@color/tab_txt_low"
+                    android:textSize="15sp" />
+
+
             </RelativeLayout>
 
             <View
@@ -333,256 +404,212 @@
                 android:layout_below="@+id/simple_introduce_gift_layout"
                 android:background="#000000" />
 
-            <View
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/id_viewpager1"
                 android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:layout_below="@+id/simple_introduce_gift_layout"
-                android:layout_marginTop="15dp"
-                android:background="#000000" />
+                android:layout_height="140dp"
+                android:layout_below="@id/simple_introduce_gift_layout" />
 
 
             <!--***********************************************-->
 
             <!--大家也喜欢************************************-->
+            <!--大家也喜欢************************************-->
             <RelativeLayout
                 android:id="@+id/simple_introduce_other_like_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/simple_introduce_gift_layout"
-                android:layout_marginTop="15dp">
+                android:layout_below="@+id/id_viewpager1">
 
                 <TextView
                     android:id="@+id/simple_introduce_other_like"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
                     android:gravity="center_vertical"
-                    android:paddingBottom="8dp"
-                    android:paddingLeft="8dp"
-                    android:paddingTop="5dp"
-                    android:text="大家也喜欢"
-                    android:textColor="#000000"
+                    android:paddingTop="2dp"
+                    android:singleLine="true"
+                    android:text="大家都喜欢"
+                    android:textColor="@color/tab_txt_press"
                     android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/simple_introduce_other_like_more"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/simple_introduce_other_like"
+
                     android:layout_alignParentRight="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp"
                     android:clickable="true"
                     android:gravity="center_vertical"
-                    android:paddingBottom="8dp"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="15dp"
-                    android:paddingTop="5dp"
-                    android:text="查看更多>"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <ImageView
-                    android:id="@+id/simple_introduce_other_like_game1_imageView"
-                    android:layout_width="120dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@+id/simple_introduce_other_like"
-                    android:paddingBottom="8dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="5dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/simple_introduce_other_like_game2_imageView"
-                    android:layout_width="120dp"
-                    android:layout_height="100dp"
-                    android:layout_alignTop="@+id/simple_introduce_other_like_game1_imageView"
-                    android:layout_below="@+id/simple_introduce_other_like"
-                    android:layout_centerInParent="true"
-                    android:paddingBottom="8dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="5dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_launcher" />
-
-                <ImageView
-                    android:id="@+id/simple_introduce_other_like_game3_imageView"
-                    android:layout_width="120dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignTop="@+id/simple_introduce_other_like_game2_imageView"
-                    android:layout_below="@+id/simple_introduce_other_like"
-                    android:paddingBottom="8dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="5dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_launcher" />
-
-                <TextView
-                    android:id="@+id/simple_introduce_other_like_game1_name"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@+id/simple_introduce_other_like_game1_imageView"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="5dp"
-                    android:gravity="center"
-                    android:paddingBottom="8dp"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
-                    android:paddingTop="5dp"
+                    android:paddingLeft="2dp"
+                    android:paddingTop="2dp"
                     android:singleLine="true"
-                    android:text="游戏1"
-                    android:textColor="#000000"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/simple_introduce_other_like_game2_name"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/simple_introduce_other_like_game2_imageView"
-                    android:layout_centerInParent="true"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="5dp"
-                    android:gravity="center"
-                    android:paddingBottom="8dp"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
-                    android:paddingTop="5dp"
-                    android:singleLine="true"
-                    android:text="游戏2"
-                    android:textColor="#000000"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/simple_introduce_other_like_game3_name"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@+id/simple_introduce_other_like_game3_imageView"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="5dp"
-                    android:gravity="center"
-                    android:paddingBottom="8dp"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
-                    android:paddingTop="5dp"
-                    android:singleLine="true"
-                    android:text="游戏3"
-                    android:textColor="#000000"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/simple_introduce_other_like_game1_download"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/simple_introduce_other_like_game1_name"
-                    android:layout_gravity="center_vertical"
-                    android:gravity="center"
-                    android:paddingBottom="8dp"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
-                    android:paddingTop="5dp"
-                    android:singleLine="true"
-                    android:text="80%用户下载"
-                    android:textColor="#000000"
+                    android:text="更多>"
+                    android:textColor="@color/tab_txt_press"
                     android:textSize="15sp" />
 
-                <TextView
-                    android:id="@+id/simple_introduce_other_like_game2_download"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/simple_introduce_other_like_game2_name"
-                    android:layout_centerInParent="true"
-                    android:layout_gravity="center_vertical"
-                    android:gravity="center"
-                    android:paddingBottom="8dp"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
-                    android:paddingTop="5dp"
-                    android:singleLine="true"
-                    android:text="80%用户下载"
-                    android:textColor="#000000"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/simple_introduce_other_like_game3_download"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@+id/simple_introduce_other_like_game3_name"
-                    android:layout_gravity="center_vertical"
-                    android:gravity="center"
-                    android:paddingBottom="8dp"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
-                    android:paddingTop="5dp"
-                    android:singleLine="true"
-                    android:text="80%用户下载"
-                    android:textColor="#000000"
-                    android:textSize="15sp" />
-
-                <LinearLayout
+                <TableLayout
+                    android:id="@+id/simple_introduce_other_like_more_tablelayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/simple_introduce_other_like_game1_download"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal">
+                    android:layout_below="@+id/simple_introduce_other_like">
 
-                    <Button
-                        android:id="@+id/simple_introduce_other_like_game1_button"
-                        android:layout_width="60dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginRight="25dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/simple_introduce_button_selector"
-                        android:text="下载"
-                        android:textColor="#000000"
-                        android:textSize="15sp" />
+                    <TableRow android:gravity="center">
 
-                    <Button
-                        android:id="@+id/simple_introduce_other_like_game2_button"
-                        android:layout_width="60dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginRight="25dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/simple_introduce_button_selector"
-                        android:text="下载"
-                        android:textColor="#000000"
-                        android:textSize="15sp" />
+                        <ImageView
+                            android:id="@+id/simple_introduce_other_like_game1_imageView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_launcher" />
 
-                    <Button
-                        android:id="@+id/simple_introduce_other_like_game3_button"
-                        android:layout_width="60dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginRight="25dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/simple_introduce_button_selector"
-                        android:text="下载"
-                        android:textColor="#000000"
-                        android:textSize="15sp" />
-                </LinearLayout>
+                        <ImageView
+                            android:id="@+id/simple_introduce_other_like_game2_imageView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/simple_introduce_other_like_game1_imageView"
+                            android:layout_centerInParent="true"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_launcher" />
+
+                        <ImageView
+                            android:id="@+id/simple_introduce_other_like_game3_imageView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignTop="@+id/simple_introduce_other_like_game2_imageView"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_launcher" />
+
+                        <ImageView
+                            android:id="@+id/simple_introduce_other_like_game4_imageView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignTop="@+id/simple_introduce_other_like_game2_imageView"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_launcher" />
+                    </TableRow>
+
+
+                    <TableRow android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/simple_introduce_other_like_game1_name"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="游戏1"
+                            android:textColor="#000000"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/simple_introduce_other_like_game2_name"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="游戏2"
+                            android:textColor="#000000"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/simple_introduce_other_like_game3_name"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="游戏3"
+                            android:textColor="#000000"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/simple_introduce_other_like_game4_name"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="游戏4"
+                            android:textColor="#000000"
+                            android:textSize="20sp" />
+                    </TableRow>
+
+                    <TableRow android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/simple_introduce_other_like_game1_download"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="80%用户下载"
+                            android:textColor="@color/darkGrey"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/simple_introduce_other_like_game2_download"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="80%用户下载"
+                            android:textColor="@color/darkGrey"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/simple_introduce_other_like_game3_download"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="80%用户下载"
+                            android:textColor="@color/darkGrey"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/simple_introduce_other_like_game4_download"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="80%用户下载"
+                            android:textColor="@color/darkGrey"
+                            android:textSize="15sp" />
+                    </TableRow>
+                </TableLayout>
             </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1px"
                 android:layout_below="@+id/simple_introduce_other_like_layout"
-                android:background="@color/black" />
-
-            <View
-                android:id="@+id/simple_introduce_line_between_gift_and_appTag"
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:layout_below="@+id/simple_introduce_other_like_layout"
-                android:layout_marginTop="15dp"
                 android:background="@color/black" />
             <!--***********************************************-->
 
@@ -591,7 +618,7 @@
                 android:id="@+id/simple_introduce_app_tag_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/simple_introduce_line_between_gift_and_appTag"
+                android:layout_below="@+id/simple_introduce_other_like_layout"
 
                 android:background="@color/white">
 
@@ -601,14 +628,12 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
                     android:gravity="center_vertical"
-                    android:paddingBottom="8dp"
-                    android:paddingLeft="8dp"
-                    android:paddingTop="5dp"
+                    android:paddingTop="2dp"
                     android:singleLine="true"
                     android:text="应用标签"
-                    android:textColor="@color/black"
+                    android:textColor="@color/tab_txt_press"
                     android:textSize="20sp" />
 
                 <Button
@@ -781,11 +806,11 @@
 
     <!--底部固定栏***********************************************-->
     <LinearLayout
+        android:id="@+id/simple_introduce_bottom_layout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:background="@color/white"
-        android:id="@+id/simple_introduce_bottom_layout"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -800,39 +825,44 @@
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
             android:background="@color/white"
-            android:gravity="center"
             android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/simple_introduce_download_button"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/simple_introduce_button_selector"
+                android:gravity="center"
+                android:text="下载"
+                android:textColor="@color/white"
+                android:textSize="24dp" />
 
             <ImageButton
                 android:id="@+id/simple_introduce_share_button"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/white"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_share_selector"
                 android:paddingBottom="2dp"
                 android:paddingTop="2dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/share_normal" />
+                android:scaleType="fitXY" />
 
-            <Button
-                android:id="@+id/simple_introduce_download_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:text="下载"
-                android:textSize="24dp" />
 
             <ImageButton
                 android:id="@+id/simple_introduce_favorite_button"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/white"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_like_selector"
                 android:paddingBottom="2dp"
-                android:paddingTop="2dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/star_off" />
+                android:scaleType="fitXY" />
         </LinearLayout>
     </LinearLayout>
     <!--***********************************************-->

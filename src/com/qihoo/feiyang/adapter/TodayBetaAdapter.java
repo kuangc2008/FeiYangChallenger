@@ -10,10 +10,12 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.widget.ProgressWheel;
 import com.qihoo.feiyang.challenger.R;
 import com.qihoo.feiyang.entity.GameBetaInfo;
+import com.qihoo.feiyang.internet.DownLoad;
 import com.qihoo.feiyang.thread.ProgressWheelThread;
 
 import java.util.ArrayList;
@@ -83,12 +85,12 @@ public class TodayBetaAdapter extends BaseAdapter {
 
         viewHolder.tvName.setText(this.mGameBetaInfos.get(position)
                 .getgNameStr());
-        viewHolder.tvSize.setText(this.mGameBetaInfos.get(position).getgSize());
+        viewHolder.tvSize.setText("|  " + this.mGameBetaInfos.get(position).getgSize());
         viewHolder.tvNum.setText(this.mGameBetaInfos.get(position).getgNum()
                 + mContext.getResources()
                 .getString(R.string.download_num));
-        viewHolder.tvInfo.setText(this.mGameBetaInfos.get(position)
-                .getgInfoStr());
+        viewHolder.tvInfo.setText("《" + this.mGameBetaInfos.get(position)
+                .getgNameStr() + "》" + mContext.getString(R.string.luandouxiyou));
 
         viewHolder.ivGameIco.setImageResource(imgIds[this.mGameBetaInfos.get(
                 position).getgIcoUri()]);
@@ -101,25 +103,14 @@ public class TodayBetaAdapter extends BaseAdapter {
 
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Log.i("11111", "----" + position);
 
-
-//              ViewHolder  myholder = (ViewHolder) listBtn.get(position).getTag();
-//
-//
-//                if (myholder.progressWheelzzgetVisibility() == View.GONE) {
-//
-//                    listBtn.get(position).setVisibility(View.VISIBLE);
-//
-//
-////                    ProgressWheelThread progressWheelThread = new ProgressWheelThread(listBtn.get(position));
-//
-////                    progressWheelThread.start();
-//                    viewHolder.btnDownLoad.setVisibility(View.GONE);
-
-
-//                }
-
+                String uri = "http://gdown.baidu.com/data/wisegame/4ae6d2d7378e6cdf/QQ_122.apk";
+                DownLoad downLoad = new DownLoad(mContext, uri);
+                if (downLoad.checkFileExit()) {
+                    Toast.makeText(mContext, "you have already has the APK.", Toast.LENGTH_SHORT).show();
+                } else {
+                    downLoad.processDownLoad();
+                }
 
             }
         });

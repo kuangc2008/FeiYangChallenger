@@ -8,5 +8,6 @@ import android.app.Application;
 public class MyApplication extends Application {
 
     public static boolean isLogin = false;
+    public static String nickStr = "撸啊撸";
 
 }

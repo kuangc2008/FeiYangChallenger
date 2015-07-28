@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.qihoo.feiyang.app.MyApplication;
@@ -23,6 +24,7 @@ public class LoginActivity extends Activity {
     private SharedPreferences.Editor editor;
     private Context context;
     private LoginInterface m_interface;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,15 @@ public class LoginActivity extends Activity {
         final EditText password_EditText = (EditText) findViewById(R.id.Login_password_editText);
         final Button login_btn = (Button) findViewById(R.id.Login_button);
         final Button login_sign_btn = (Button) findViewById(R.id.Login_sign_up_button);
+
+
+        final ImageButton loginBackBtn = (ImageButton) findViewById(R.id.btn_login_back);
+        loginBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         usr_name_EditText.setText(usr_preference.getString("username", null));
 
         login_btn.setOnClickListener(new View.OnClickListener() {
@@ -48,9 +59,13 @@ public class LoginActivity extends Activity {
                 if (m_interface.isRightPassword(usr_name, password)) {
                     Toast.makeText(LoginActivity.this, R.string.Login_in_success, Toast.LENGTH_SHORT).show();
 
+
+                    String nickName = m_interface.userName_to_nickName(usr_name);
+                    MyApplication.nickStr = nickName;
                     Intent returntohome = new Intent(LoginActivity.this, HoujhFragment.class);
                     MyApplication.isLogin = true;
                     returntohome.putExtra("isSuccess", true);
+
                     startActivity(returntohome);
 
 

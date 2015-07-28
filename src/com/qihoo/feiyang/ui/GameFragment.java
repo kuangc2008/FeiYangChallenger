@@ -52,6 +52,7 @@ public class GameFragment extends FragmentActivity {
         initViews();
         mPager.setCurrentItem(0);
 
+
     }
 
 
@@ -69,6 +70,9 @@ public class GameFragment extends FragmentActivity {
         mPager = (ViewPager) this.findViewById(R.id.vPager);
         mPager.setAdapter(mAdapter);
         mPager.setOnPageChangeListener(new MyPageChangeListener());
+        mPager.setCurrentItem(0);
+
+
     }
 
     private void initViews() {
@@ -85,6 +89,10 @@ public class GameFragment extends FragmentActivity {
         tvComm.setOnClickListener(myclick);
         tvBBS.setOnClickListener(myclick);
         tvGift.setOnClickListener(myclick);
+        tvIntro.setTextColor(getApplicationContext().getResources().getColor(R.color.backgroud));
+        tvComm.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+        tvBBS.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+        tvGift.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
 
     }
 
@@ -99,37 +107,43 @@ public class GameFragment extends FragmentActivity {
                     finish();
                     break;
                 case R.id.tv_intro_game:
-                    tvIntro.setTextColor(android.graphics.Color.BLUE);
 
-                    tvComm.setTextColor(Color.BLACK);
-                    tvBBS.setTextColor(Color.BLACK);
-                    tvGift.setTextColor(Color.BLACK);
+                    tvIntro.setTextColor(getApplicationContext().getResources().getColor(R.color.backgroud));
+                    tvComm.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+                    tvBBS.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+                    tvGift.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+
+
                     mPager.setCurrentItem(0);
                     break;
 
                 case R.id.tv_comment_game:
-                    tvComm.setTextColor(android.graphics.Color.BLUE);
 
-                    tvIntro.setTextColor(Color.BLACK);
-                    tvBBS.setTextColor(Color.BLACK);
-                    tvGift.setTextColor(Color.BLACK);
+
+                    tvIntro.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+                    tvComm.setTextColor(getApplicationContext().getResources().getColor(R.color.backgroud));
+                    tvBBS.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+                    tvGift.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+
+
+//
                     mPager.setCurrentItem(1);
                     break;
                 case R.id.tv_bbs_game:
-                    tvBBS.setTextColor(android.graphics.Color.BLUE);
+                    tvIntro.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+                    tvComm.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+                    tvBBS.setTextColor(getApplicationContext().getResources().getColor(R.color.backgroud));
+                    tvGift.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
 
-                    tvIntro.setTextColor(Color.BLACK);
-                    tvComm.setTextColor(Color.BLACK);
-                    tvGift.setTextColor(Color.BLACK);
 
                     mPager.setCurrentItem(2);
                     break;
                 case R.id.tv_gift_game:
                     mPager.setCurrentItem(3);
-                    tvGift.setTextColor(android.graphics.Color.BLUE);
-                    tvBBS.setTextColor(Color.BLACK);
-                    tvIntro.setTextColor(Color.BLACK);
-                    tvComm.setTextColor(Color.BLACK);
+                    tvIntro.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+                    tvComm.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+                    tvBBS.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+                    tvGift.setTextColor(getApplicationContext().getResources().getColor(R.color.backgroud));
                     break;
 
             }
@@ -143,8 +157,6 @@ public class GameFragment extends FragmentActivity {
         public void onPageScrollStateChanged(int arg0) {
             if (arg0 == 2) {
                 int i = mPager.getCurrentItem();
-//                clearChioce();
-//                iconChange(i);
             }
         }
 
@@ -163,36 +175,36 @@ public class GameFragment extends FragmentActivity {
             switch (index) {
                 case 0:
 
-                    tvIntro.setTextColor(android.graphics.Color.BLUE);
 
-                    tvComm.setTextColor(Color.BLACK);
-                    tvBBS.setTextColor(Color.BLACK);
-                    tvGift.setTextColor(Color.BLACK);
+                    tvIntro.setTextColor(getApplicationContext().getResources().getColor(R.color.backgroud));
+                    tvComm.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+                    tvBBS.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+                    tvGift.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
                     break;
                 case 1:
 
-                    tvComm.setTextColor(android.graphics.Color.BLUE);
 
-                    tvIntro.setTextColor(Color.BLACK);
-                    tvBBS.setTextColor(Color.BLACK);
-                    tvGift.setTextColor(Color.BLACK);
+                    tvIntro.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+                    tvComm.setTextColor(getApplicationContext().getResources().getColor(R.color.backgroud));
+                    tvBBS.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+                    tvGift.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
 
                     break;
 
                 case 2:
 
-                    tvBBS.setTextColor(android.graphics.Color.BLUE);
-
-                    tvIntro.setTextColor(Color.BLACK);
-                    tvComm.setTextColor(Color.BLACK);
-                    tvGift.setTextColor(Color.BLACK);
+                    tvIntro.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+                    tvComm.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+                    tvBBS.setTextColor(getApplicationContext().getResources().getColor(R.color.backgroud));
+                    tvGift.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
                     break;
                 case 3:
 
-                    tvGift.setTextColor(android.graphics.Color.BLUE);
-                    tvBBS.setTextColor(Color.BLACK);
-                    tvIntro.setTextColor(Color.BLACK);
-                    tvComm.setTextColor(Color.BLACK);
+                    mPager.setCurrentItem(3);
+                    tvIntro.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+                    tvComm.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+                    tvBBS.setTextColor(getApplicationContext().getResources().getColor(R.color.tab_txt_low));
+                    tvGift.setTextColor(getApplicationContext().getResources().getColor(R.color.backgroud));
                     break;
 
 
@@ -204,36 +216,4 @@ public class GameFragment extends FragmentActivity {
     }
 
 
-    public void clearChioce() {
-        tvIntro.setBackgroundResource(R.drawable.icon_no_pressed);
-        tvComm.setBackgroundResource(R.drawable.icon_no_pressed);
-        tvBBS.setBackgroundResource(R.drawable.icon_no_pressed);
-        tvGift.setBackgroundResource(R.drawable.icon_no_pressed);
-
-    }
-
-    public void iconChange(int num) {
-        switch (num) {
-            case R.id.introduct_game:
-            case 0:
-                tvIntro.setBackgroundResource(R.drawable.icon_pressed);
-                mPager.setCurrentItem(0);
-                break;
-            case R.id.comment_game:
-                tvComm.setBackgroundResource(R.drawable.icon_pressed);
-                mPager.setCurrentItem(1);
-                break;
-            case R.id.bbs_game:
-            case 2:
-                tvBBS.setBackgroundResource(R.drawable.icon_pressed);
-                mPager.setCurrentItem(2);
-                break;
-            case R.id.gift_game:
-            case 3:
-                tvGift.setBackgroundResource(R.drawable.icon_pressed);
-                mPager.setCurrentItem(3);
-
-                break;
-        }
-    }
-}  
+}

@@ -7,15 +7,18 @@
     <RelativeLayout
         android:id="@+id/rl1"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="#C0D8FC">
+        android:layout_height="45dp"
+        android:background="#2c93fc">
 
         <Button
             android:id="@+id/btn_login"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="登录"
-            android:textAlignment="center" />
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/login_back_selector" />
 
         <TextView
             android:id="@+id/textView2"
@@ -23,17 +26,18 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="手游内测专区"
-            android:textColor="#0D0D0D"
-            android:textSize="25sp" />
+            android:textColor="@color/white"
+            android:textSize="23sp" />
 
         <Button
             android:id="@+id/btn_search"
-            android:layout_width="50dp"
-            android:layout_height="fill_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:background="@drawable/ic_action_search" />
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_search_selector" />
 
     </RelativeLayout>
 
@@ -44,7 +48,7 @@
     <android.support.v4.view.ViewPager
         android:id="@+id/id_viewpager"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="290dp"
         android:layout_weight="1"></android.support.v4.view.ViewPager>
 
 </LinearLayout>

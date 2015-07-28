@@ -4,4 +4,9 @@
     <color name="white">#ffffff</color>
     <color name="darkGrey">#999999</color>
     <color name="lightGrey">#CCCCCC</color>
+
+    <color name="tab_txt_normal">#434343</color>
+    <color name="tab_txt_press">#2C93FC</color>
+    <color name="tab_txt_low">#AAAAAA</color>
+    <color name="backgroud">#FFFFFF</color>
 </resources>
